@@ -11,15 +11,15 @@
     <div class="signup_form">
       <form method="POST" action="/appbootcamp/signup">
         <div class="screen_name">
-          <input type="text" name="screen_name"><label><?php echo $error_signup_screen_name ?></label>
+          <input type="text" name="screen_name" value="<?php echo $screen_name ?>">
         </div>
 
         <div class="name">
-          <input type="text" name="name">
+          <input type="text" name="name" value="<?php echo $name ?>">
         </div>
 
         <div class="password">
-          <input type="text" name="password">
+          <input type="text" name="password" value="<?php echo $password ?>">
         </div>
 
         <div class="submit">
