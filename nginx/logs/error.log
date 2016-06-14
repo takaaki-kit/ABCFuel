@@ -1362,3 +1362,4 @@ PHP message: PHP Fatal error:  Call to a member function build() on a non-object
 2016/06/14 17:47:03 [notice] 16134#16134: *75 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
 2016/06/14 17:47:58 [info] 16134#16134: *75 client 192.168.33.1 closed keepalive connection
 2016/06/14 17:48:39 [notice] 16134#16134: *79 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:49:39 [info] 16134#16134: *79 client 192.168.33.1 closed keepalive connection
