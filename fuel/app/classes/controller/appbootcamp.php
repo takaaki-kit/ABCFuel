@@ -53,19 +53,16 @@ class controller_appbootcamp extends Controller_Template
       return $view;
     }
 
-    $redis = Redis::forge();
-    $redis->rpush('name',$model->name);
-   # Session::set('name',$model->name);
+    Session::set('name','wwwwwwwwwwwwww');
+  # $redis = Redis::forge();
+  #  $redis->rpush('name',$model->name);
     Response::redirect('/appbootcamp/timeline');
   }
 
   public function get_timeline()
   {
-    $redis = Redis::forge();
-    $name = $redis->lrange('name',0,-1);
-    #$name = Session::get('name');
-    return View::forge('timeline',array(
-      'namehoge' => $name[0],
-    ));
+    #$redis = Redis::forge();
+    #$name = $redis->lrange('name',0,-1);
+    return View::forge('timeline');
   }
 }

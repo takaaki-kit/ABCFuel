@@ -5,7 +5,7 @@
   <head>
   </head>
   <body>
-  <p><?php echo $namehoge; ?></p>
+  <p><?php echo Session::get('name'); ?></p>
     <div class="all-item">
       <div class="header">
         <div class="home">
