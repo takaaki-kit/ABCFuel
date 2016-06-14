@@ -5,6 +5,7 @@
   <head>
   </head>
   <body>
+  <p><?php echo $namehoge; ?></p>
     <div class="all-item">
       <div class="header">
         <div class="home">

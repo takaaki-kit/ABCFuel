@@ -20,7 +20,7 @@ class controller_appbootcamp extends Controller_Template
       'name' => '',
       'password' => '',
     ));
-    $view->set('www',$form->build());
+    $view->set_safe('www',$form->build());
     return $view;
     #return View::forge('signup',array(
     #  'www' => $form->build(),
@@ -53,11 +53,19 @@ class controller_appbootcamp extends Controller_Template
       return $view;
     }
 
+    $redis = Redis::forge();
+    $redis->rpush('name',$model->name);
+   # Session::set('name',$model->name);
     Response::redirect('/appbootcamp/timeline');
   }
 
   public function get_timeline()
   {
-    return View::forge('timeline');
+    $redis = Redis::forge();
+    $name = $redis->lrange('name',0,-1);
+    #$name = Session::get('name');
+    return View::forge('timeline',array(
+      'namehoge' => $name[0],
+    ));
   }
 }
