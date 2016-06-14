@@ -5,10 +5,11 @@ class controller_appbootcamp extends Controller
 {
     public function action_signup()
     {
-        #		$createForm = new Model_Signup_Form();
-    #		$form = $createForm->regist();
-    #		$this->template->content->set('form',$form->build(),false);
-    return View::forge('signup', array('error_signup_screen_name' => ''));
+      return View::forge('signup', array(
+        'screen_name' => '',
+        'name' => '',
+        'password' => '',
+      ));
     }
 
     public function post_signup()

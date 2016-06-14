@@ -19,7 +19,7 @@
         </div>
 
         <div class="password">
-          <input type="text" name="password" value="<?php echo $password ?>">
+          <input type="password" name="password" value="<?php echo $password ?>">
         </div>
 
         <div class="submit">
