@@ -7,6 +7,7 @@
   <body>
     <p>fieldset</p>
     
+    <?php echo $www;?>
 
     <div class="signup_form">
       <form method="POST" action="/appbootcamp/signup">

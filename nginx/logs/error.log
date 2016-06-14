@@ -1218,3 +1218,147 @@ PHP message: PHP Fatal error:  main(): Failed opening required 'Model_Signup_For
 2016/06/14 15:37:44 [info] 14477#14477: *88 client 192.168.33.1 closed keepalive connection
 2016/06/14 15:38:51 [notice] 14477#14477: *90 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
 2016/06/14 15:39:45 [info] 14477#14477: *90 client 192.168.33.1 closed keepalive connection
+2016/06/14 15:44:18 [notice] 14477#14477: *92 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 15:44:49 [info] 14477#14477: *92 client 192.168.33.1 closed keepalive connection
+2016/06/14 15:55:50 [notice] 14477#14477: *94 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 15:55:50 [error] 14477#14477: *94 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class 'Model_Signup_form' not found in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 8" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 15:56:47 [info] 14477#14477: *94 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:00:44 [notice] 14477#14477: *96 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:00:44 [error] 14477#14477: *96 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'Fuel\Core\PhpErrorException' with message 'Undefined variable: model' in /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php:10
+Stack trace:
+#0 /home/homepage/appbootcamp/appbootcamp/fuel/core/bootstrap.php(103): Fuel\Core\Errorhandler::error_handler(8, 'Undefined varia...', '/home/homepage/...', 10)
+#1 /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php(10): {closure}(8, 'Undefined varia...', '/home/homepage/...', 10, Array)
+#2 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(244): include('/home/homepage/...')
+#3 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(260): Fuel\Core\View->Fuel\Core\{closure}('/home/homepage/...', Array)
+#4 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(631): Fuel\Core\View->process_file()
+#5 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(213): Fuel\Core\View->render()
+#6 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/respon...
+PHP message: PHP Fatal error:  Call to a member function build() on a non-object in /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php on line 10" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:01:06 [notice] 14477#14477: *96 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:01:06 [error] 14477#14477: *96 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'Fuel\Core\PhpErrorException' with message 'Undefined variable: model' in /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php:10
+Stack trace:
+#0 /home/homepage/appbootcamp/appbootcamp/fuel/core/bootstrap.php(103): Fuel\Core\Errorhandler::error_handler(8, 'Undefined varia...', '/home/homepage/...', 10)
+#1 /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php(10): {closure}(8, 'Undefined varia...', '/home/homepage/...', 10, Array)
+#2 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(244): include('/home/homepage/...')
+#3 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(260): Fuel\Core\View->Fuel\Core\{closure}('/home/homepage/...', Array)
+#4 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(631): Fuel\Core\View->process_file()
+#5 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(213): Fuel\Core\View->render()
+#6 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/respon...
+PHP message: PHP Fatal error:  Call to a member function build() on a non-object in /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php on line 3" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:01:44 [notice] 14477#14477: *96 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:01:44 [error] 14477#14477: *96 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'Fuel\Core\PhpErrorException' with message 'Undefined variable: Model_User' in /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php:10
+Stack trace:
+#0 /home/homepage/appbootcamp/appbootcamp/fuel/core/bootstrap.php(103): Fuel\Core\Errorhandler::error_handler(8, 'Undefined varia...', '/home/homepage/...', 10)
+#1 /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php(10): {closure}(8, 'Undefined varia...', '/home/homepage/...', 10, Array)
+#2 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(244): include('/home/homepage/...')
+#3 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(260): Fuel\Core\View->Fuel\Core\{closure}('/home/homepage/...', Array)
+#4 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(631): Fuel\Core\View->process_file()
+#5 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/view.php(213): Fuel\Core\View->render()
+#6 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/r...
+PHP message: PHP Fatal error:  Class name must be a valid object or a string in /home/homepage/appbootcamp/appbootcamp/fuel/app/views/signup.php on line 10" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:02:01 [notice] 14477#14477: *96 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:02:47 [info] 14477#14477: *96 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:04:51 [notice] 14477#14477: *101 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:05:51 [info] 14477#14477: *101 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:17:44 [notice] 14477#14477: *103 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:18:12 [notice] 14477#14477: *103 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:18:34 [notice] 14477#14477: *103 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:18:36 [notice] 14477#14477: *103 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:18:42 [notice] 14477#14477: *103 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:19:14 [info] 14477#14477: *103 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:19:30 [notice] 16134#16134: *1 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:20:01 [info] 16134#16134: *1 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:22:19 [notice] 16134#16134: *3 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:22:19 [error] 16134#16134: *3 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 8" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:22:29 [notice] 16134#16134: *3 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:22:29 [error] 16134#16134: *3 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 8" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:22:57 [notice] 16134#16134: *3 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:23:50 [info] 16134#16134: *3 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:24:19 [notice] 16134#16134: *7 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:25:19 [info] 16134#16134: *7 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:25:48 [notice] 16134#16134: *9 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:26:08 [notice] 16134#16134: *9 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:26:31 [notice] 16134#16134: *9 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:26:32 [notice] 16134#16134: *9 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:27:18 [info] 16134#16134: *9 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:32:55 [notice] 16134#16134: *14 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:32:55 [error] 16134#16134: *14 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Call to undefined method Fuel\Core\View::content() in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 17" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:33:26 [info] 16134#16134: *14 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:34:06 [notice] 16134#16134: *16 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:34:44 [info] 16134#16134: *16 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:35:04 [notice] 16134#16134: *18 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:35:45 [info] 16134#16134: *18 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:36:01 [notice] 16134#16134: *20 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:36:46 [info] 16134#16134: *20 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:37:16 [notice] 16134#16134: *22 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:37:47 [info] 16134#16134: *22 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:41:02 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:41:02 [error] 16134#16134: *24 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected 'www' (T_STRING) in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 18" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:41:25 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:41:25 [error] 16134#16134: *24 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected ';' in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 19" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:41:44 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:42:15 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:42:16 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:42:21 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:43:00 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:43:01 [notice] 16134#16134: *24 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:43:36 [info] 16134#16134: *24 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:43:52 [notice] 16134#16134: *33 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:44:25 [notice] 16134#16134: *33 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:45:23 [info] 16134#16134: *33 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:49:15 [notice] 16134#16134: *36 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:49:15 [error] 16134#16134: *36 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected ';' in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 18" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 16:49:27 [notice] 16134#16134: *36 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:50:15 [info] 16134#16134: *36 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:50:33 [notice] 16134#16134: *39 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:51:04 [info] 16134#16134: *39 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:52:50 [notice] 16134#16134: *41 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:53:31 [info] 16134#16134: *41 client 192.168.33.1 closed keepalive connection
+2016/06/14 16:59:10 [notice] 16134#16134: *43 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 16:59:54 [notice] 16134#16134: *43 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:00:40 [info] 16134#16134: *43 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:00:41 [notice] 16134#16134: *46 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:00:42 [notice] 16134#16134: *46 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:01:42 [info] 16134#16134: *46 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:02:19 [notice] 16134#16134: *49 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:02:50 [info] 16134#16134: *49 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:05:40 [notice] 16134#16134: *51 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:06:40 [info] 16134#16134: *51 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:06:45 [notice] 16134#16134: *53 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:07:43 [notice] 16134#16134: *53 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:08:05 [notice] 16134#16134: *53 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:08:24 [notice] 16134#16134: *53 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:09:16 [info] 16134#16134: *53 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:28:22 [notice] 16134#16134: *58 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:28:56 [info] 16134#16134: *58 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:30:17 [notice] 16134#16134: *60 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:30:19 [notice] 16134#16134: *60 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:30:56 [notice] 16134#16134: *60 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:30:57 [notice] 16134#16134: *60 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:31:49 [info] 16134#16134: *60 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:33:25 [notice] 16134#16134: *65 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:33:57 [notice] 16134#16134: *65 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:34:49 [info] 16134#16134: *65 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:36:03 [notice] 16134#16134: *68 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:36:03 [error] 16134#16134: *68 FastCGI sent in stderr: "PHP message: PHP Warning:  Uncaught exception 'Fuel\Core\PhpErrorException' with message 'Undefined variable: from' in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php:19
+Stack trace:
+#0 /home/homepage/appbootcamp/appbootcamp/fuel/core/bootstrap.php(103): Fuel\Core\Errorhandler::error_handler(8, 'Undefined varia...', '/home/homepage/...', 19)
+#1 /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php(19): {closure}(8, 'Undefined varia...', '/home/homepage/...', 19, Array)
+#2 [internal function]: controller_appbootcamp->action_signup()
+#3 /home/homepage/appbootcamp/appbootcamp/fuel/core/classes/request.php(454): ReflectionMethod->invokeArgs(Object(controller_appbootcamp), Array)
+#4 /home/homepage/appbootcamp/appbootcamp/public/index.php(71): Fuel\Core\Request->execute()
+#5 /home/homepage/appbootcamp/appbootcamp/public/index.php(96): {closure}()
+#6 {main}
+  thrown in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.ph...
+PHP message: PHP Fatal error:  Call to a member function build() on a non-object in /home/homepage/appbootcamp/appbootcamp/fuel/app/classes/controller/appbootcamp.php on line 19" while reading response header from upstream, client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "local.konaka"
+2016/06/14 17:36:13 [notice] 16134#16134: *68 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:37:03 [info] 16134#16134: *68 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:39:22 [notice] 16134#16134: *71 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:40:23 [info] 16134#16134: *71 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:42:31 [notice] 16134#16134: *73 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:43:02 [info] 16134#16134: *73 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:46:27 [notice] 16134#16134: *75 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:46:43 [notice] 16134#16134: *75 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:47:03 [notice] 16134#16134: *75 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
+2016/06/14 17:47:58 [info] 16134#16134: *75 client 192.168.33.1 closed keepalive connection
+2016/06/14 17:48:39 [notice] 16134#16134: *79 "^/([a-zA-Z0-9\-]+?)/([a-zA-Z0-9\-]+?)(?:$|/.*$)" matches "/appbootcamp/signup", client: 192.168.33.1, server: local.konaka, request: "GET /appbootcamp/signup HTTP/1.1", host: "local.konaka"
