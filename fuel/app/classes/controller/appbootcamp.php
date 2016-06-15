@@ -3,47 +3,76 @@
 
 class controller_appbootcamp extends Controller_Template
 {
-    public $template = 'signup';
+  public $template = 'signup';
 
-    public function action_signup()
-    {
-        return View::forge('signup', array(
+  public function action_signup()
+  {
+    return View::forge('signup', array(
       'screen_name' => '',
       'name' => '',
       'password' => '',
     ));
-    }
+  }
 
-    public function post_signup()
-    {
-        $model = Model_User::forge();
-        $view = View::forge('signup', array(
+  public function post_signup()
+  {
+    $model = Model_User::forge();
+    $view = View::forge('signup', array(
       'screen_name' => Input::param('screen_name'),
       'name' => Input::param('name'),
       'password' => Input::param('password'),
     ));
-        $model->screen_name = Input::param('screen_name');
-        $model->name = Input::param('name');
-        $model->password = Input::param('password');
+    $model->screen_name = Input::param('screen_name');
+    $model->name = Input::param('name');
+    $model->password = Input::param('password');
 
-        try {
-            $model->save();
-        } catch (\Orm\ValidationFailed $e) {
-            return $view;
-        }
-
-        Session::set('id', $model->id);
-        Response::redirect('/appbootcamp/timeline');
+    try {
+      $model->save();
+    } catch (\Orm\ValidationFailed $e) {
+      return $view;
     }
 
-    public function get_timeline()
-    {
-        $user_id = Session::get('id');
-        $user = Model_User::find($user_id);
-        if (!$user) {
-            Response::redirect('/appbootcamp/signup');
-        }
+    Session::set('id', $model->id);
+    Response::redirect('/appbootcamp/timeline');
+  }
 
-        return View::forge('timeline');
+  public function get_timeline()
+  {
+    $user_id = Session::get('id');
+    $user = Model_User::find($user_id);
+    if (!$user) {
+      Response::redirect('/appbootcamp/signup');
     }
+
+    return View::forge('timeline',array(
+     'aaa'  => $user_id, 
+    ));
+  }
+
+  public function get_login()
+  {
+    return View::forge('login', array(
+    ));
+  }
+
+  public function post_login()
+  {
+    $user = Model_User::find('first',array(
+      'where' => array(
+        array('screen_name',Input::param('screen_name')),
+        array('password',Input::param('password')),
+      ),
+    ));
+    if(empty($user)){
+      Response::redirect('/appbootcamp/login');
+    }
+    Session::set('id', $user->id);
+    Response::redirect('/appbootcamp/timeline');
+  }
+
+
+  public function action_logout(){
+    Session::destroy();
+    Response::redirect('/appbootcamp/login');
+  }
 }
