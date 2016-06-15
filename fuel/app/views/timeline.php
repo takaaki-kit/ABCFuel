@@ -66,12 +66,12 @@
 
       <div class="timeline">
 
-        <div class="content" id="post_id_<:$content.get('id'):>">
 <?php foreach($messages as $m)
 {
 ?>
+        <div class="content" id="post_id_<?php echo $m->id ?>">
           <div class="image">
-          <img src="iamge url">
+          <img src="iamge_url">
           </div>
           <div class="content-post">
             <div class="content-post-header">

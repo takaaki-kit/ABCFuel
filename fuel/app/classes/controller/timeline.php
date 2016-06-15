@@ -1,6 +1,6 @@
 <?php
 
-class controller_timeline extends Controller_Template
+class Controller_timeline extends Controller_Template
 {
     public $template = 'timeline';
     public function get_index()
@@ -15,6 +15,7 @@ class controller_timeline extends Controller_Template
             'where' => array(
                 array('user_id', $user_id),
             ),
+            'order_by'  =>  array('created_at' => 'desc'),
         ));
 
         return View::forge('timeline', array(
