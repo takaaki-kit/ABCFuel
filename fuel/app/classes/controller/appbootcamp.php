@@ -81,9 +81,10 @@ class controller_appbootcamp extends Controller_Template
         if (!$user) {
             Response::redirect('/appbootcamp/signup');
         }
+        $messages = Model_Message::find('all');
 
         return View::forge('timeline', array(
-          'aaa' => $user_id,
+          'aaa' => var_dump($messages),
           'type'  =>  'discover'
         ));
     }
