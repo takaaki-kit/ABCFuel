@@ -52,10 +52,10 @@
         </div>
         <form action="/message/new" method="POST" enctype="multipart/form-data">
           <div class="post-text">
-            <input  name="post_text">
+            <input type="text" name="post_text">
           </div>
           <div class="post-picture">
-            <label for="file_button"><i class="fa fa-camera"></i></label>
+            <label for="file_button"><i></i></label>
             <input type="file" style="display:none;" id="file_button" name="image">
           </div>
           <div class="post-confirm">
