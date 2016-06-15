@@ -3,36 +3,15 @@
 
 class controller_appbootcamp extends Controller_Template
 {
-
   public $template = 'signup';
 
   public function action_signup()
   {
-
-    $form = Fieldset::forge('fs');
-    $form->add('screen_name', 'Screen_name', array('class' => 'screen_name'));
-    $form->add('name', 'name', array('class' => 'name'));
-    $form->add('password', 'password', array('class' => 'password'));
-    $form->add('submit', '', array('class' => 'submit'));
-
-    $view = View::forge('signup', array(
+    return View::forge('signup', array(
       'screen_name' => '',
       'name' => '',
       'password' => '',
     ));
-    $view->set_safe('www',$form->build());
-    return $view;
-    #return View::forge('signup',array(
-    #  'www' => $form->build(),
-    #));
-    #$view = View::forge('forge');
-    #$view->set('fs',$form);
-    #return $view;
-    #return View::forge('signup', array(
-    #  'screen_name' => '',
-    #  'name' => '',
-    #  'password' => '',
-    #));
   }
 
   public function post_signup()
@@ -53,16 +32,17 @@ class controller_appbootcamp extends Controller_Template
       return $view;
     }
 
-    Session::set('name','wwwwwwwwwwwwww');
-  # $redis = Redis::forge();
-  #  $redis->rpush('name',$model->name);
+    Session::set('id',$model->id);
     Response::redirect('/appbootcamp/timeline');
   }
 
   public function get_timeline()
   {
-    #$redis = Redis::forge();
-    #$name = $redis->lrange('name',0,-1);
+    $user_id = Session::get('id');
+    $user = Model_User::find($user_id);
+    if(!$user) {
+      Response::redirect('/appbootcamp/signup');
+    }
     return View::forge('timeline');
   }
 }

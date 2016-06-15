@@ -5,8 +5,6 @@
   <head>
   </head>
   <body>
-    <p>fieldset</p>
-    
 
     <div class="signup_form">
       <form method="POST" action="/appbootcamp/signup">

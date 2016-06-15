@@ -5,11 +5,11 @@
   <head>
   </head>
   <body>
-  <p><?php echo Session::get('name'); ?></p>
+  <p><?php echo Session::get('id'); ?></p>
     <div class="all-item">
       <div class="header">
         <div class="home">
-          <a href="/"><i><span>ホーム</span></i></a>
+          <a href="/appbootcamp/timeline"><i><span>ホーム</span></i></a>
         </div>
         <div class="mentions">
           <a href=""><i><span>メンション</span></i></a>

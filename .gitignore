@@ -35,3 +35,4 @@ desktop.ini
 /fuel/app/config/*/db.php
 /nginx/logs/*.log
 /fuel/app/config/crypt.php
+dump.rdb
