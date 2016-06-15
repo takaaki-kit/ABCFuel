@@ -6,7 +6,7 @@
   </head>
     <body>
         <div class="login_form">
-                <form method="POST" action="/appbootcamp/login">
+                <form method="POST" action="/login">
                       <div class="screen_name">
                             <p>ログインID</p>
                                 <input type="text" name="screen_name">

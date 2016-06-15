@@ -10,13 +10,13 @@
     <div class="all-item">
       <div class="header">
         <div class="home">
-          <a href="/appbootcamp/timeline"><i><span>ホーム</span></i></a>
+          <a href="/timeline"><i><span>ホーム</span></i></a>
         </div>
         <div class="mentions">
-          <a href="/appbootcamp/mentions"><i><span>メンション</span></i></a>
+          <a href="/mentions"><i><span>メンション</span></i></a>
         </div>
         <div class="all-post">
-          <a href="/appbootcamp/discover"><i><span>すべての投稿</span></i></a>
+          <a href="/discover"><i><span>すべての投稿</span></i></a>
         </div>
         <div class="setting" onclick="obj=document.getElementById('dropmenu').style; obj.display=(obj.display=='none')?'block':'none';">
           <a style="cursor:pointer;"><i></i></a>
@@ -29,7 +29,7 @@
           <input type="text" value="検索"><i class="fa fa-search"></i>
         </div>
         <div class="logout">
-          <a href="/appbootcamp/logout"><i><span>ログアウト</span></i></a>
+          <a href="/logout"><i><span>ログアウト</span></i></a>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
         <div class="profile">
         <span><?php echo $user->text ?></span>
         </div>
-        <form action="/appbootcamp/message/new" method="POST" enctype="multipart/form-data">
+        <form action="/message/new" method="POST" enctype="multipart/form-data">
           <div class="post-text">
             <input  name="post_text">
           </div>

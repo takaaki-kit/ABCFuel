@@ -7,7 +7,7 @@
   <body>
 
     <div class="signup_form">
-      <form method="POST" action="/appbootcamp/signup">
+      <form method="POST" action="/signup">
         <div class="screen_name">
           <input type="text" name="screen_name" value="<?php echo $screen_name ?>">
         </div>
