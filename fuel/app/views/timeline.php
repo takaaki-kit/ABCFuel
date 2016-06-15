@@ -40,17 +40,17 @@
           </div>
           <div class=username_id>
             <div class="name">
-              <span><: $name :></span>
+            <span><?php echo $user->name ?></span>
             </div>
             <div class="screen_name">
-              <span>@<: $screen_name :></span>
+            <span>@<?php echo $user->screen_name ?></span>
             </div>
           </div>
         </div>
         <div class="profile">
-          <span><: $profile :></span>
+        <span><?php echo $user->text ?></span>
         </div>
-        <form action="/message/new" method="POST" enctype="multipart/form-data">
+        <form action="/appbootcamp/message/new" method="POST" enctype="multipart/form-data">
           <div class="post-text">
             <input  name="post_text">
           </div>
@@ -66,46 +66,42 @@
 
       <div class="timeline">
 
-        : for $messages -> $content{
         <div class="content" id="post_id_<:$content.get('id'):>">
+<?php foreach($messages as $m)
+{
+?>
           <div class="image">
-              <img src="<: $content.get('uimage') :>">
+          <img src="iamge url">
           </div>
           <div class="content-post">
             <div class="content-post-header">
               <div class="name">
-                <: $content.get('name') :>
+                <?php echo $user->name ?>
               </div>
               <div class="screen_name">
-                @<: $content.get('screen_name') :>
+                @<?php echo $user->screen_name ?>
               </div>
               <div class="post-date">
-                <span><: $content.get('created_at') :></span>
+              <span><?php echo $m->created_at ?></span>
               </div>
             </div>
             <div class="text">
-              <p><:  $content.get('text') :></p>
+              <span><?php echo $m->text ?></span>
             </div>
-            :if $content.get('image') != nil{
             <div class="picture">
               <img src="<: $content.get('image') :>">
             </div>
-            :}
-            :if $content.get('user_id') ==  $login_id {
             <div class="edit">
               <a onclick="edit_text(this)" id="<: $content.get('id') :>" data-remodal-target="edit_modal"><i class="fa fa-pencil"></i>編集</a>
             </div>
             <div class="delete">
               <a onclick="delete_text(this)" id="<: $content.get('id') :>" data-remodal-target="delete_modal"><i class="fa fa-trash"></i>削除</a>
             </div>
-            :}
           </div>
         </div>
-        :  }
+<?php } ?>
       </div>
     </div>
 
-    <: block edit_modal -> { } :>
-    <: block delete_modal -> { } :>
   </body>
 </html>

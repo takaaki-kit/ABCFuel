@@ -45,7 +45,9 @@ class controller_appbootcamp extends Controller_Template
         ));
 
         return View::forge('timeline', array(
-          'aaa' => var_dump($messages),
+          'aaa' => $user_id,
+          'messages' => $messages,
+          'user'  => $user,
           'type'  =>  'timeline'
         ));
     }
@@ -106,4 +108,7 @@ class controller_appbootcamp extends Controller_Template
           'type'  =>  'mentions'
         ));
     }
+
+
+
 }
