@@ -11,12 +11,12 @@ class controller_signup extends Controller_Template
 
     public function post_index()
     {
-        $model              = Model_User::forge();
+        $model = Model_User::forge();
         $model->screen_name = Input::param('screen_name');
-        $model->name        = Input::param('name');
-        $model->password    = Input::param('password');
-        $view               = View::forge('signup', ['user' => $model]);
-        $result             = Model_User::isNotYetExistedScreenName($model->screen_name);
+        $model->name = Input::param('name');
+        $model->password = Input::param('password');
+        $view = View::forge('signup', ['user' => $model]);
+        $result = Model_User::isNotYetExistedScreenName($model->screen_name);
         if (!$result) {
             $error = 'そのscreen_nameは既に使用されています';
             $view->set('error', $error);

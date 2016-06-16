@@ -7,13 +7,16 @@
     <body>
         <div class="login_form">
                 <form method="POST" action="/login">
+          <?php if (isset($error)): ?>
+          <p><?php echo $error ?></p>
+          <?php endif ?>
                       <div class="screen_name">
                             <p>ログインID</p>
-                                <input type="text" name="screen_name">
+                            <input type="text" name="screen_name" value="<?php echo $user->screen_name ?>">
                       </div>
                      <div class="password">
                           <p>パスワード</p>
-                            <input type="text" name="password">
+                          <input type="text" name="password" value="<?php echo $user->name ?>">
                                     </div>
 
         <div class="submit">
