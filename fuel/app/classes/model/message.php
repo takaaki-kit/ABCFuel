@@ -25,4 +25,20 @@ class model_message extends \Orm\Model
     );
 
     protected static $_table_name = 'messages';
+
+    static public function message_find_by_userId_desc_by_createdAt($user_id)
+    {
+        return Model_Message::find('all', array(
+            'where' => array(
+                array('user_id', $user_id),
+            ),
+            'order_by' => array('created_at' => 'desc'),
+        ));
+    }
+
+    static public function message_find_all()
+    {
+        return Model_Message::find('all');
+    }
+
 }

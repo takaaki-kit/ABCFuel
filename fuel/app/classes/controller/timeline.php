@@ -14,12 +14,7 @@ class controller_timeline extends Controller
 
     public function get_index()
     {
-        $messages = Model_Message::find('all', array(
-            'where' => array(
-                array('user_id', Session::get('id')),
-            ),
-            'order_by' => array('created_at' => 'desc'),
-        ));
+        $messages = Model_Message::message_find_by_userId_desc_by_createdAt(Session::get('id'));
 
         return View::forge('timeline', array(
           'aaa'      => Session::get('id'),
