@@ -16,10 +16,6 @@ class Model_MessageTest extends PHPUnit_Extensions_Database_TestCase
         return $this->createFlatXmlDataset(APPPATH."tests/db/defaultMessageDataset.xml");
     }
 
-    public function testDummy()
-    {
-        $this->assertEquals(1,1);
-    }
 
     public function testログインしているユーザが発言したメッセージを降順で取得する()
     {
