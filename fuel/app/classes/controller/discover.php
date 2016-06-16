@@ -1,21 +1,28 @@
 
 <?php
 
-class controller_discover extends Controller_Template
+class controller_discover extends Controller
 {
-    public $template = 'timeline';
-    public function get_index()
+    private $user;
+
+    public function before()
     {
-        $user_id = Session::get('id');
-        $user    = Model_User::find($user_id);
+        $user = Model_User::find(Session::get('id'));
         if (!$user) {
             Response::redirect('/signup');
         }
+        $this->user = $user;
+    }
+
+    public function get_index()
+    {
         $messages = Model_Message::find('all');
 
         return View::forge('timeline', array(
-            'aaa'  => var_dump($messages),
-            'type' => 'discover',
+            'aaa'      => Session::get('id'),
+            'messages' => $messages,
+            'user'     => $this->user,
+            'type'     => 'discover',
     ));
     }
 }

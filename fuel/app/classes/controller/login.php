@@ -21,7 +21,7 @@ class controller_login extends Controller_Template
         ));
         $view = View::forge('login', ['user' => $model]);
         if (empty($user)) {
-            $error = ';
+            $error = 'invalid input';
             $view->set('error', $error);
 
             return $view;

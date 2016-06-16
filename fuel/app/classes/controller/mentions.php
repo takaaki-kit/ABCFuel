@@ -1,25 +1,31 @@
 
 <?php
 
-class controller_mentions extends Controller_Template
+class controller_mentions extends Controller
 {
-    public $template = 'timeline';
-    public function get_index()
+    private $user;
+
+    public function before()
     {
-        $user_id = Session::get('id');
-        $user    = Model_User::find($user_id);
+        $user = Model_User::find(Session::get('id'));
         if (!$user) {
             Response::redirect('/signup');
         }
+        $this->user = $user;
+    }
 
+    public function get_index()
+    {
         $messages = Model_Message::find('all', array(
             'where' => array(
-                array('mention', $user_id),
+                array('mention', Session::get('id')),
             ),
         ));
 
         return View::forge('timeline', array(
-            'aaa'  => var_dump($messages),
+            'aaa'      => Session::get('id'),
+            'messages' => $messages,
+            'user'   => $this->user,
             'type' => 'mentions',
         ));
     }
