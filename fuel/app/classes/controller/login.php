@@ -8,11 +8,11 @@ class controller_login extends Controller
     }
     public function post_index()
     {
-        $loginParams = $this->getPostParams();
-        $login_user = Model_User::user_find_by_screenName_and_password($loginParams->screen_name,$loginParams->password);
+        $postParams = $this->getPostParams();
+        $login_user = Model_User::user_find_by_screenName_and_password($postParams->screen_name,$postParams->password);
         if (empty($login_user)) {
             $error = 'invalid input';
-            $view = View::forge('login', ['user' => $loginParams]);
+            $view = View::forge('login', ['user' => $postParams]);
             $view->set('error', $error);
 
             return $view;
