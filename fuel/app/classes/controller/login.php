@@ -8,19 +8,24 @@ class controller_login extends Controller
     }
     public function post_index()
     {
-
-        $model = Model_User::forge();
-        $model->screen_name = Input::param('screen_name');
-        $model->password = Input::param('password');
-        $user = Model_User::user_find_by_screenName_and_password($model->screen_name,$model->password);
-        $view = View::forge('login', ['user' => $model]);
-        if (empty($user)) {
+        $loginParams = $this->getPostParams();
+        $login_user = Model_User::user_find_by_screenName_and_password($loginParams->screen_name,$loginParams->password);
+        if (empty($login_user)) {
             $error = 'invalid input';
+            $view = View::forge('login', ['user' => $loginParams]);
             $view->set('error', $error);
 
             return $view;
         }
-        Session::set('id', $user->id);
+        Session::set('id', $login_user->id);
         Response::redirect('/timeline');
+    }
+
+    private function getPostParams(){
+        $user = Model_User::forge();
+        $user->screen_name = Input::param('screen_name');
+        $user->password = Input::param('password');
+
+        return $user;
     }
 }
