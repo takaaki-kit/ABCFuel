@@ -7,11 +7,10 @@ class controller_discover extends Controller
 
     public function before()
     {
-        $user = Model_User::find(Session::get('id'));
-        if (!$user) {
+        $this->user = Model_User::find(Session::get('id'));
+        if (!$this->user) {
             Response::redirect('/signup');
         }
-        $this->user = $user;
     }
 
     public function get_index()

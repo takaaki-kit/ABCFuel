@@ -1,8 +1,7 @@
 <?php
 
-class controller_login extends Controller_Template
+class controller_login extends Controller
 {
-    public $template = 'login';
     public function get_index()
     {
         return View::forge('login',['user' => Model_User::forge()]);
