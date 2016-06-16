@@ -1,9 +1,7 @@
 <?php
 
-class controller_signup extends Controller_Template
+class controller_signup extends Controller
 {
-    public $template = 'signup';
-
     public function get_index()
     {
         return View::forge('signup', ['user' => Model_User::forge()]);
