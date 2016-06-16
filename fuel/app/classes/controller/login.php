@@ -12,12 +12,7 @@ class controller_login extends Controller
         $model = Model_User::forge();
         $model->screen_name = Input::param('screen_name');
         $model->password = Input::param('password');
-        $user = Model_User::find('first', array(
-            'where' => array(
-                array('screen_name', $model->screen_name),
-                array('password', $model->password),
-            ),
-        ));
+        $user = Model_User::user_find_by_screenName_and_password($model->screen_name,$model->password);
         $view = View::forge('login', ['user' => $model]);
         if (empty($user)) {
             $error = 'invalid input';
