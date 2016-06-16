@@ -26,4 +26,12 @@ class Model_UserTest extends PHPUnit_Extensions_Database_TestCase
         $this->assertEquals(false,(new Model_User)->isNotYetExistedScreenName($existScreenName));
     }
 
+    public function test入力されたscreen_nameとpasswordが一致していたらそのユーザオブジェクトを返す()
+    {
+        $existUserScreenName = 'user1';
+        $existUserPass = 'aho';
+        $expect = Model_User::user_find_by_screenName_and_password($existUserScreenName,$existUserPass);
+        $this->assertEquals(!empty($expect),true);
+    }
+
 }

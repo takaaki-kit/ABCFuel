@@ -41,6 +41,16 @@ class model_user extends \Orm\Model
 
     protected static $_table_name = 'users';
 
+    static public function user_find_by_screenName_and_password($screenName,$pass)
+    {
+        return  Model_User::find('first', array(
+            'where' => array(
+                array('screen_name', $screenName),
+                array('password', $pass),
+            ),
+        ));
+    }
+
     static public function isNotYetExistedScreenName($check)
     {
         $result = self::find('all', array(
