@@ -41,4 +41,12 @@ class model_message extends \Orm\Model
         return Model_Message::find('all');
     }
 
+    static public function message_find_by_mention_desc_by_createdAt($login_user_id)
+    {
+        return Model_Message::find('all', array(
+            'where' => array(
+                array('mention', $login_user_id),
+            ),
+        ));
+    }
 }
