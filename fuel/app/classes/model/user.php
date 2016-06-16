@@ -41,7 +41,7 @@ class model_user extends \Orm\Model
 
     protected static $_table_name = 'users';
 
-    public function isNotYetExistedScreenName($check)
+    static public function isNotYetExistedScreenName($check)
     {
         $result = self::find('all', array(
       'where' => array(
