@@ -1,8 +1,8 @@
-<?php echo Asset::css("signup.css"); ?>
 
 <!doctype html>
 <html lang="ja">
   <head>
+    <?php echo Asset::css("signup.css"); ?>
   </head>
   <body>
 

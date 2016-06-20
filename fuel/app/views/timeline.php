@@ -5,7 +5,7 @@
   <head>
   </head>
   <body>
-  <p><?php echo Session::get('id'); ?></p>
+  <p><?php echo $aaa; ?></p>
     <div class="all-item">
       <div class="header">
         <div class="home">
@@ -26,6 +26,9 @@
         </div>
         <div class="search">
           <input type="text" value="検索"><i class="fa fa-search"></i>
+        </div>
+        <div class="logout">
+          <a href="/appbootcamp/logout"><i><span>ログアウト</span></i></a>
         </div>
       </div>
 

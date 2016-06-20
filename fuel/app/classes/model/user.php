@@ -9,7 +9,7 @@ class model_user extends \Orm\Model
         'required',
       ),
     ),
-    'name' => array( 
+    'name' => array(
       'validation' => array(
         'required',
       ),
