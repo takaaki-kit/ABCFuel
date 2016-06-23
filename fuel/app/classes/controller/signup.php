@@ -24,8 +24,7 @@ class controller_signup extends Controller
         try {
             $model->save();
         } catch (\Orm\ValidationFailed $e) {
-            $error = '不正な値です';
-            $view->set('error', $error);
+            $view->set_safe('error', $e->getMessage());
 
             return $view;
         }
