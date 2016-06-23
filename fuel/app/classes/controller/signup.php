@@ -17,7 +17,7 @@ class controller_signup extends Controller
             return $view;
         }
         try {
-            $postParams->save();
+            Repository_Modeluser::save($postParams);
         } catch (\Orm\ValidationFailed $e) {
             $view = Repository_View::setNewParam($view, 'error', $e->getMessage());
 
