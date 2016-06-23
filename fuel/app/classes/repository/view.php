@@ -6,4 +6,9 @@ class repository_view
     {
         return View::forge('signup', ['user' => $params]);
     }
+
+    static public function createLoginViewWithUserParams($params)
+    {
+        return View::forge('login', ['postParams' => $params]);
+    }
 }
