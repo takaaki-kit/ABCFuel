@@ -11,4 +11,9 @@ class repository_view
     {
         return View::forge('login', ['postParams' => $params]);
     }
+
+    static public function setNewParam($view,$key,$value)
+    {
+        return $view->set($key, $value);
+    }
 }
