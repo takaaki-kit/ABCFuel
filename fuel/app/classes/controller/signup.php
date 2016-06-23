@@ -11,16 +11,15 @@ class controller_signup extends Controller
     {
         $postParams = $this->getPostParams();
         $view = Repository_View::createSignupViewWithUserParams($postParams);
-        $result = Repository_Modeluser::isExistedScreenName($postParams->screen_name);
-        if ($result) {
-            $view = Repository_View::setNewParam($view,'error','そのscreen_nameはすでに使用されています');
+        if (Repository_Modeluser::isExistedScreenName($postParams->screen_name)) {
+            $view = Repository_View::setNewParam($view, 'error', 'そのscreen_nameはすでに使用されています');
 
             return $view;
         }
         try {
             $postParams->save();
         } catch (\Orm\ValidationFailed $e) {
-            $view = Repository_View::setNewParam($view,'error',$e->getMessage());
+            $view = Repository_View::setNewParam($view, 'error', $e->getMessage());
 
             return $view;
         }
@@ -30,10 +29,11 @@ class controller_signup extends Controller
 
     private function getPostParams()
     {
-        $model = Model_User::forge();
+        $model = Repository_Modeluser::createUserObject();
         $model->screen_name = Input::param('screen_name');
         $model->name = Input::param('name');
         $model->password = Input::param('password');
+
         return $model;
     }
 }

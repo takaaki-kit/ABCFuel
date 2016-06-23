@@ -18,6 +18,11 @@ class Repository_Modeluser
         ));
     }
 
+    static public function save($user)
+    {
+        return $user->save();
+    }
+
     static public function isExistedScreenName($check)
     {
         $result = Model_User::find('all', array(
