@@ -44,7 +44,7 @@ class Model_UserTest extends PHPUnit_Extensions_Database_TestCase
 
     public function test空のuserオブジェクトを作成する()
     {
-        $expect = Model_User::createUserObject();
-        $this->assertEquals($expect,1);
+        $expect = get_class(Model_User::createUserObject());
+        $this->assertEquals($expect,'model_user');
     }
 }

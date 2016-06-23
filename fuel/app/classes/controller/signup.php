@@ -21,7 +21,7 @@ class controller_signup extends Controller
         try {
             $postParams->save();
         } catch (\Orm\ValidationFailed $e) {
-            $view->set('error', $e->getMessage());
+            $view->set('error',$e->getMessage());
 
             return $view;
         }
