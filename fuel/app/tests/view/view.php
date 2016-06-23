@@ -30,8 +30,8 @@ class Repository_ViewTest extends PHPUnit_Framework_TestCase
     public function testviewのオブジェクトに新たなパラメータ追加する()
     {
         $view = Repository_View::createLoginViewWithUserParams(Model_User::createUserObject());
-        $expect = Repository_View::setNewParam($view,'key','value');
-        $this->assertEquals($expect->key,'value');
+        $expect = Repository_View::setNewParam($view,'aho','boke');
+        $this->assertEquals($expect->aho,'boke');
     }
 
 }

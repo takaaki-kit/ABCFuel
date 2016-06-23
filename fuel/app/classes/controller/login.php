@@ -13,7 +13,7 @@ class controller_login extends Controller
         if (empty($login_user)) {
             $error = 'IDかパスワードが違います';
             $view = Repository_View::createLoginViewWithUserParams($postParams);
-            $view->set('error', $error);
+            $view = Repository_View::setNewParam($view,'error',$error);
 
             return $view;
         }

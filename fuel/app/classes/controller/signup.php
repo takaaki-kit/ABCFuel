@@ -14,14 +14,14 @@ class controller_signup extends Controller
         $result = Model_User::isNotYetExistedScreenName($postParams->screen_name);
         if (!$result) {
             $error = 'そのscreen_nameは既に使用されています';
-            $view->set('error', $error);
+            $view = Repository_View::setNewParam($view,'error',$error);
 
             return $view;
         }
         try {
             $postParams->save();
         } catch (\Orm\ValidationFailed $e) {
-            $view->set('error',$e->getMessage());
+            $view = Repository_View::setNewParam($view,'error',$e->getMessage());
 
             return $view;
         }
