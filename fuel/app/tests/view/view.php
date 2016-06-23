@@ -7,11 +7,11 @@ class Repository_ViewTest extends PHPUnit_Framework_TestCase
 {
     public function testsignupのviewをuserオブジェクトのパラメータ付きで作成する()
     {
-        $user = Repository_Modeluser::createUserObject();
+        $user = Repository_Modeluser::create_user_object();
         $user->screen_name = 'userID';
         $user->name = 'userNAME';
         $user->password = 'userPASS';
-        $expect = Repository_View::createSignupViewWithUserParams($user);
+        $expect = Repository_View::create_signup_view_with_user_params($user);
         $this->assertEquals($expect->user->screen_name,'userID','failed at createSignupViewWithUserParams , screen_name');
         $this->assertEquals($expect->user->name,'userNAME','failed at createSignupViewWithUserParams , name');
         $this->assertEquals($expect->user->password,'userPASS','failed at createSignupViewWithUserParams , password');
@@ -19,18 +19,18 @@ class Repository_ViewTest extends PHPUnit_Framework_TestCase
 
     public function testloginのviewをuserオブジェクトのパラメータ付きで作成する()
     {
-        $user = Repository_Modeluser::createUserObject();
+        $user = Repository_Modeluser::create_user_object();
         $user->screen_name = 'userID';
         $user->password = 'userPASS';
-        $expect = Repository_View::createLoginViewWithUserParams($user);
+        $expect = Repository_View::create_login_view_with_user_params($user);
         $this->assertEquals($expect->postParams->screen_name,'userID','failed at createLoginViewWithUserParams, screen_name');
         $this->assertEquals($expect->postParams->password,'userPASS','failed at createLoginViewWithUserParams, password');
     }
 
     public function testviewのオブジェクトに新たなパラメータ追加する()
     {
-        $view = Repository_View::createLoginViewWithUserParams(Repository_Modeluser::createUserObject());
-        $expect = Repository_View::setNewParam($view,'aho','boke');
+        $view = Repository_View::create_login_view_with_user_params(Repository_Modeluser::create_user_object());
+        $expect = Repository_View::set_new_param($view,'aho','boke');
         $this->assertEquals($expect->aho,'boke');
     }
 

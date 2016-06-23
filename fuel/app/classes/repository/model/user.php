@@ -1,9 +1,9 @@
 <?php
 
 
-class Repository_Modeluser
+class ModelUser
 {
-    static public function create_user_object()
+    static public function createUserObject()
     {
         return Model_User::forge();
     }
@@ -23,7 +23,7 @@ class Repository_Modeluser
         return $user->save();
     }
 
-    static public function is_existed_screenname($check)
+    static public function isExistedScreenName($check)
     {
         $result = Model_User::find('all', array(
       'where' => array(

@@ -1,7 +1,7 @@
 
 <?php
 
-class Controller_mentions extends Controller
+class Controller_Mentions extends Controller
 {
     private $user;
 
@@ -20,8 +20,8 @@ class Controller_mentions extends Controller
         return View::forge('timeline', array(
             'aaa'      => Session::get('id'),
             'messages' => $messages,
-            'user'   => $this->user,
-            'type' => 'mentions',
+            'user'     => $this->user,
+            'type'     => 'mentions',
         ));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class controller_logout extends Controller_Template
+class Controller_Logout extends Controller_Template
 {
     public $template = 'login';
     public function action_index()

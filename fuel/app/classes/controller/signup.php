@@ -1,25 +1,25 @@
 <?php
 
-class controller_signup extends Controller
+class Controller_Signup extends Controller
 {
     public function get_index()
     {
-        return Repository_View::createSignupViewWithUserParams(Repository_Modeluser::createUserObject());
+        return Repository_View::create_signup_view_with_user_params(Repository_Modeluser::create_user_object());
     }
 
     public function post_index()
     {
-        $postParams = $this->getPostParams();
-        $view = Repository_View::createSignupViewWithUserParams($postParams);
-        if (Repository_Modeluser::isExistedScreenName($postParams->screen_name)) {
-            $view = Repository_View::setNewParam($view, 'error', 'そのscreen_nameはすでに使用されています');
+        $postParams = $this->get_post_params();
+        $view = Repository_View::create_signup_view_with_user_params($postParams);
+        if (Repository_Modeluser::is_existed_screenname($postParams->screen_name)) {
+            $view = Repository_View::set_new_param($view, 'error', 'そのscreen_nameはすでに使用されています');
 
             return $view;
         }
         try {
             Repository_Modeluser::save($postParams);
         } catch (\Orm\ValidationFailed $e) {
-            $view = Repository_View::setNewParam($view, 'error', $e->get_fieldset()->validation()->error());
+            $view = Repository_View::set_new_param($view, 'error', $e->get_fieldset()->validation()->error());
 
             return $view;
         }
@@ -27,9 +27,9 @@ class controller_signup extends Controller
         Response::redirect('/timeline');
     }
 
-    private function getPostParams()
+    private function get_post_params()
     {
-        $model = Repository_Modeluser::createUserObject();
+        $model = Repository_Modeluser::create_user_object();
         $model->screen_name = Input::param('screen_name');
         $model->name = Input::param('name');
         $model->password = Input::param('password');

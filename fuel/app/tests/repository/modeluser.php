@@ -18,13 +18,13 @@ class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
     public function test入力されたscreennameが存在しないならfalseが帰ってくる()
     {
         $noExistScreenName = 'ahoboke';
-        $this->assertEquals(false, (new Repository_Modeluser())->isExistedScreenName($noExistScreenName));
+        $this->assertEquals(false, (new Repository_Modeluser())->is_existed_screenname($noExistScreenName));
     }
 
     public function test入力されたscreennameが存在するならtrueが帰ってくる()
     {
         $existScreenName = 'user1';
-        $this->assertEquals(true, (new Repository_Modeluser())->isExistedScreenName($existScreenName));
+        $this->assertEquals(true, (new Repository_Modeluser())->is_existed_screenname($existScreenName));
     }
 
     public function test入力されたscreen_nameとpasswordが一致していたらそのユーザオブジェクトを返す()
@@ -45,13 +45,13 @@ class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
 
     public function test空のuserオブジェクトを作成する()
     {
-        $expect = get_class(Repository_Modeluser::createUserObject());
+        $expect = get_class(Repository_Modeluser::create_user_object());
         $this->assertEquals($expect, 'model_user');
     }
 
     public function testusersテーブルに値を保存する()
     {
-        $user = Repository_Modeluser::createUserObject();
+        $user = Repository_Modeluser::create_user_object();
         $user->screen_name = 'userID';
         $user->name = 'userNAME';
         $user->password = 'userPASS';

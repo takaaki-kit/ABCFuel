@@ -1,7 +1,7 @@
 
 <?php
 
-class controller_discover extends Controller
+class Controller_Discover extends Controller
 {
     private $user;
 

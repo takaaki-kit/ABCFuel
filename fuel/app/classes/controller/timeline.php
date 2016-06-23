@@ -1,6 +1,6 @@
 <?php
 
-class controller_timeline extends Controller
+class Controller_Timeline extends Controller
 {
     private $user;
 

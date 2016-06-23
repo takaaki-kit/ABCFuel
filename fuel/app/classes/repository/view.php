@@ -2,17 +2,17 @@
 
 class repository_view
 {
-    static public function createSignupViewWithUserParams($params)
+    static public function create_signup_view_with_user_params($params)
     {
         return View::forge('signup', ['user' => $params]);
     }
 
-    static public function createLoginViewWithUserParams($params)
+    static public function create_login_view_with_user_params($params)
     {
         return View::forge('login', ['postParams' => $params]);
     }
 
-    static public function setNewParam($view,$key,$value)
+    static public function set_new_param($view,$key,$value)
     {
         return $view->set_safe($key, $value);
     }
