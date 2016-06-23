@@ -1,5 +1,5 @@
 <?php
 
 return array(
-    'required'  =>  ':label is required',
+    'required'  =>  ':label is Required',
 );
