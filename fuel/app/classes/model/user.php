@@ -56,7 +56,7 @@ class model_user extends \Orm\Model
         ));
     }
 
-    static public function isNotYetExistedScreenName($check)
+    static public function isExistedScreenName($check)
     {
         $result = self::find('all', array(
       'where' => array(
@@ -65,9 +65,9 @@ class model_user extends \Orm\Model
     ));
 
         if (empty($result)) {
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
     }
 }

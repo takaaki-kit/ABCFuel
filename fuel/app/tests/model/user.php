@@ -14,16 +14,16 @@ class Model_UserTest extends PHPUnit_Extensions_Database_TestCase
     {
         return $this->createFlatXmlDataset(APPPATH."tests/db/defaultUserDataset.xml");
     }
-    public function test入力されたscreennameが存在しないならtrueが帰ってくる()
+    public function test入力されたscreennameが存在しないならfalseが帰ってくる()
     {
-        $noScreenName = 'ahoboke';
-        $this->assertEquals(true,(new Model_User)->isNotYetExistedScreenName($noScreenName));
+        $noExistScreenName = 'ahoboke';
+        $this->assertEquals(false,(new Model_User)->isExistedScreenName($noExistScreenName));
     }
 
-    public function test入力されたscreennameが存在するならfalseが帰ってくる()
+    public function test入力されたscreennameが存在するならtrueが帰ってくる()
     {
         $existScreenName = 'user1';
-        $this->assertEquals(false,(new Model_User)->isNotYetExistedScreenName($existScreenName));
+        $this->assertEquals(true,(new Model_User)->isExistedScreenName($existScreenName));
     }
 
     public function test入力されたscreen_nameとpasswordが一致していたらそのユーザオブジェクトを返す()
