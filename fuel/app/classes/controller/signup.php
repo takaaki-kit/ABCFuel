@@ -4,7 +4,7 @@ class controller_signup extends Controller
 {
     public function get_index()
     {
-        return View::forge('signup', ['user' => Model_User::forge()]);
+        return View::forge('signup', ['user' => Model_User::createUserObject()]);
     }
 
     public function post_index()

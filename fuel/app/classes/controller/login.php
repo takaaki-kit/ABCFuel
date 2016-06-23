@@ -4,7 +4,7 @@ class controller_login extends Controller
 {
     public function get_index()
     {
-        return View::forge('login',['postParams' => Model_User::forge()]);
+        return View::forge('login',['postParams' => Model_User::createUserObject()]);
     }
     public function post_index()
     {
