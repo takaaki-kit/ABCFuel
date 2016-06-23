@@ -4,13 +4,13 @@ class controller_signup extends Controller
 {
     public function get_index()
     {
-        return View::forge('signup', ['user' => Model_User::createUserObject()]);
+        return Repository_View::createSignupViewWithUserParams(Model_User::createUserObject());
     }
 
     public function post_index()
     {
         $postParams = $this->getPostParams();
-        $view = View::forge('signup', ['user' => $postParams]);
+        $view = Repository_View::createSignupViewWithUserParams($postParams);
         $result = Model_User::isNotYetExistedScreenName($postParams->screen_name);
         if (!$result) {
             $error = 'そのscreen_nameは既に使用されています';
