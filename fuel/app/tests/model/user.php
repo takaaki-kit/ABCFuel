@@ -41,4 +41,10 @@ class Model_UserTest extends PHPUnit_Extensions_Database_TestCase
         $expect = Model_User::user_find_by_screenName_and_password($noExistUserScreenName,$noExistUserPass);
         $this->assertEquals(!empty($expect),false);
     }
+
+    public function test空のuserオブジェクトを作成する()
+    {
+        $expect = Model_User::createUserObject();
+        $this->assertEquals($expect,1);
+    }
 }

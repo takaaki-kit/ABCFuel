@@ -41,6 +41,11 @@ class model_user extends \Orm\Model
 
     protected static $_table_name = 'users';
 
+    static public function createUserObject()
+    {
+        return Model_User::forge();
+    }
+
     static public function user_find_by_screenName_and_password($screenName,$pass)
     {
         return  Model_User::find('first', array(
