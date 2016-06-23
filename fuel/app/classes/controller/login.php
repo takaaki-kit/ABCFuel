@@ -11,9 +11,8 @@ class controller_login extends Controller
         $postParams = $this->getPostParams();
         $login_user = Model_User::user_find_by_screenName_and_password($postParams->screen_name,$postParams->password);
         if (empty($login_user)) {
-            $error = 'IDかパスワードが違います';
             $view = Repository_View::createLoginViewWithUserParams($postParams);
-            $view = Repository_View::setNewParam($view,'error',$error);
+            $view = Repository_View::setNewParam($view,'error','IDかパスワードが違います');
 
             return $view;
         }

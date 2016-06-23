@@ -12,9 +12,9 @@ class Repository_ViewTest extends PHPUnit_Framework_TestCase
         $user->name = 'userNAME';
         $user->password = 'userPASS';
         $expect = Repository_View::createSignupViewWithUserParams($user);
-        $this->assertEquals($expect->user->screen_name,'userID');
-        $this->assertEquals($expect->user->name,'userNAME');
-        $this->assertEquals($expect->user->password,'userPASS');
+        $this->assertEquals($expect->user->screen_name,'userID','failed at createSignupViewWithUserParams , screen_name');
+        $this->assertEquals($expect->user->name,'userNAME','failed at createSignupViewWithUserParams , name');
+        $this->assertEquals($expect->user->password,'userPASS','failed at createSignupViewWithUserParams , password');
     }
 
     public function testloginのviewをuserオブジェクトのパラメータ付きで作成する()
@@ -23,8 +23,8 @@ class Repository_ViewTest extends PHPUnit_Framework_TestCase
         $user->screen_name = 'userID';
         $user->password = 'userPASS';
         $expect = Repository_View::createLoginViewWithUserParams($user);
-        $this->assertEquals($expect->postParams->screen_name,'userID');
-        $this->assertEquals($expect->postParams->password,'userPASS');
+        $this->assertEquals($expect->postParams->screen_name,'userID','failed at createLoginViewWithUserParams, screen_name');
+        $this->assertEquals($expect->postParams->password,'userPASS','failed at createLoginViewWithUserParams, password');
     }
 
     public function testviewのオブジェクトに新たなパラメータ追加する()
