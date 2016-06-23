@@ -4,14 +4,14 @@ class controller_signup extends Controller
 {
     public function get_index()
     {
-        return Repository_View::createSignupViewWithUserParams(Model_User::createUserObject());
+        return Repository_View::createSignupViewWithUserParams(Repository_Modeluser::createUserObject());
     }
 
     public function post_index()
     {
         $postParams = $this->getPostParams();
         $view = Repository_View::createSignupViewWithUserParams($postParams);
-        $result = Model_User::isExistedScreenName($postParams->screen_name);
+        $result = Repository_Modeluser::isExistedScreenName($postParams->screen_name);
         if ($result) {
             $view = Repository_View::setNewParam($view,'error','そのscreen_nameはすでに使用されています');
 

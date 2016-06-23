@@ -1,8 +1,8 @@
 <?php
 
-require_once('fuel/app/classes/repository/modelUserAccess.php');
+require_once('fuel/app/classes/repository/modeluser.php');
 
-class Repository_ModelUserAccessTest extends PHPUnit_Extensions_Database_TestCase
+class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
 {
     public function getConnection()
     {
@@ -17,20 +17,20 @@ class Repository_ModelUserAccessTest extends PHPUnit_Extensions_Database_TestCas
     public function test入力されたscreennameが存在しないならfalseが帰ってくる()
     {
         $noExistScreenName = 'ahoboke';
-        $this->assertEquals(false,(new Repository_ModelUserAccess)->isExistedScreenName($noExistScreenName));
+        $this->assertEquals(false,(new Repository_Modeluser)->isExistedScreenName($noExistScreenName));
     }
 
     public function test入力されたscreennameが存在するならtrueが帰ってくる()
     {
         $existScreenName = 'user1';
-        $this->assertEquals(true,(new Repository_ModelUserAccess)->isExistedScreenName($existScreenName));
+        $this->assertEquals(true,(new Repository_Modeluser)->isExistedScreenName($existScreenName));
     }
 
     public function test入力されたscreen_nameとpasswordが一致していたらそのユーザオブジェクトを返す()
     {
         $existUserScreenName = 'user1';
         $existUserPass = 'aho';
-        $expect = Repository_ModelUserAccess::user_find_by_screenName_and_password($existUserScreenName,$existUserPass);
+        $expect = Repository_Modeluser::user_find_by_screenName_and_password($existUserScreenName,$existUserPass);
         $this->assertEquals(!empty($expect),true);
     }
 
@@ -38,13 +38,13 @@ class Repository_ModelUserAccessTest extends PHPUnit_Extensions_Database_TestCas
     {
         $noExistUserScreenName = 'dummy';
         $noExistUserPass = 'dummy';
-        $expect = Repository_ModelUserAccess::user_find_by_screenName_and_password($noExistUserScreenName,$noExistUserPass);
+        $expect = Repository_Modeluser::user_find_by_screenName_and_password($noExistUserScreenName,$noExistUserPass);
         $this->assertEquals(!empty($expect),false);
     }
 
     public function test空のuserオブジェクトを作成する()
     {
-        $expect = get_class(Repository_ModelUserAccess::createUserObject());
+        $expect = get_class(Repository_Modeluser::createUserObject());
         $this->assertEquals($expect,'model_user');
     }
 }

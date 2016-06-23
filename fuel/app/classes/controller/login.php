@@ -1,15 +1,16 @@
 <?php
 
+
 class controller_login extends Controller
 {
     public function get_index()
     {
-        return Repository_View::createLoginViewWithUserParams(Model_User::createUserObject());
+        return Repository_View::createLoginViewWithUserParams(Repository_Modeluser::createUserObject());
     }
     public function post_index()
     {
         $postParams = $this->getPostParams();
-        $login_user = Model_User::user_find_by_screenName_and_password($postParams->screen_name,$postParams->password);
+        $login_user = Repository_Modeluser::user_find_by_screenName_and_password($postParams->screen_name,$postParams->password);
         if (empty($login_user)) {
             $view = Repository_View::createLoginViewWithUserParams($postParams);
             $view = Repository_View::setNewParam($view,'error','IDかパスワードが違います');

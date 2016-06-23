@@ -1,8 +1,7 @@
 <?php
 
-require_once('fuel/app/classes/model/user.php');
 
-class Repository_ModelUserAccess
+class Repository_Modeluser
 {
     static public function createUserObject()
     {
