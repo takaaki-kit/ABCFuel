@@ -14,6 +14,6 @@ class repository_view
 
     static public function setNewParam($view,$key,$value)
     {
-        return $view->set($key, $value);
+        return $view->set_safe($key, $value);
     }
 }
