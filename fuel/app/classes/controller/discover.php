@@ -15,7 +15,7 @@ class Controller_Discover extends Controller
 
     public function get_index()
     {
-        $messages = Repository_Modelmessage::message_find_all();
+        $messages = Message::message_find_all();
 
         return View::forge('timeline', array(
             'aaa'      => Session::get('id'),

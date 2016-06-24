@@ -1,4 +1,3 @@
-
 <?php
 
 class Controller_Message extends Controller_Template

@@ -1,6 +1,6 @@
 <?php
 
-class Repository_Modelmessage
+class Message
 {
     public static function message_find_by_userId_desc_by_createdAt($user_id)
     {

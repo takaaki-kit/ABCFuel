@@ -1,4 +1,3 @@
-
 <?php
 
 class Controller_Mentions extends Controller
@@ -15,7 +14,7 @@ class Controller_Mentions extends Controller
 
     public function get_index()
     {
-        $messages = Repository_Modelmessage::message_find_by_mention_desc_by_createdAt(Session::get('id'));
+        $messages = Message::message_find_by_mention_desc_by_createdAt(Session::get('id'));
 
         return View::forge('timeline', array(
             'aaa'      => Session::get('id'),

@@ -1,8 +1,9 @@
 <?php
 
-require_once 'fuel/app/classes/repository/modeluser.php';
 
-class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
+
+
+class UserTest extends PHPUnit_Extensions_Database_TestCase
 {
     public function getConnection()
     {
@@ -20,7 +21,7 @@ class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
     {
         $existUserScreenName = 'user1';
         $existUserPass = 'aho';
-        $expect = Repository_Modeluser::user_find_by_screenName_and_password($existUserScreenName, $existUserPass);
+        $expect = User::user_find_by_screenName_and_password($existUserScreenName, $existUserPass);
         $this->assertEquals(!empty($expect), true);
     }
 
@@ -28,23 +29,23 @@ class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
     {
         $noExistUserScreenName = 'dummy';
         $noExistUserPass = 'dummy';
-        $expect = Repository_Modeluser::user_find_by_screenName_and_password($noExistUserScreenName, $noExistUserPass);
+        $expect = User::user_find_by_screenName_and_password($noExistUserScreenName, $noExistUserPass);
         $this->assertEquals(!empty($expect), false);
     }
 
     public function test空のuserオブジェクトを作成する()
     {
-        $expect = get_class(Repository_Modeluser::create_user_object());
+        $expect = get_class(User::create_user_object());
         $this->assertEquals($expect, 'model_user');
     }
 
     public function testusersテーブルに値を保存する()
     {
-        $user = Repository_Modeluser::create_user_object();
+        $user = User::create_user_object();
         $user->screen_name = 'userID';
         $user->name = 'userNAME';
         $user->password = 'userPASS';
-        $expect = Repository_Modeluser::save($user);
+        $expect = User::save($user);
         $this->assertEquals($expect, true);
     }
 }

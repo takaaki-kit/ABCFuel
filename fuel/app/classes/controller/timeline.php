@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Timeline extends Controller
+class controller_timeline extends Controller
 {
     private $user;
 
@@ -14,7 +14,7 @@ class Controller_Timeline extends Controller
 
     public function get_index()
     {
-        $messages = repository_Modelmessage::message_find_by_userId_desc_by_createdAt(Session::get('id'));
+        $messages = Message::message_find_by_userId_desc_by_createdAt(Session::get('id'));
 
         return View::forge('timeline', array(
           'aaa'      => Session::get('id'),

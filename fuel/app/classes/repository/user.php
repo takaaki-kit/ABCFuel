@@ -1,9 +1,9 @@
 <?php
 
 
-class ModelUser
+class User
 {
-    static public function createUserObject()
+    static public function create_user_object()
     {
         return Model_User::forge();
     }
