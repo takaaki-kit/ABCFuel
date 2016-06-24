@@ -5,8 +5,6 @@
   <head>
   </head>
   <body>
-  <p><?php echo $aaa; ?></p>
-  <p><?php echo $type; ?></p>
     <div class="all-item">
       <div class="header">
         <div class="home">
