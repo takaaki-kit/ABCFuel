@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 class UserTest extends PHPUnit_Extensions_Database_TestCase
 {
     public function getConnection()
@@ -21,7 +18,7 @@ class UserTest extends PHPUnit_Extensions_Database_TestCase
     {
         $existUserScreenName = 'user1';
         $existUserPass = 'aho';
-        $expect = User::user_find_by_screenName_and_password($existUserScreenName, $existUserPass);
+        $expect = User::find_by_screenName_and_password($existUserScreenName, $existUserPass);
         $this->assertEquals(!empty($expect), true);
     }
 
@@ -29,7 +26,7 @@ class UserTest extends PHPUnit_Extensions_Database_TestCase
     {
         $noExistUserScreenName = 'dummy';
         $noExistUserPass = 'dummy';
-        $expect = User::user_find_by_screenName_and_password($noExistUserScreenName, $noExistUserPass);
+        $expect = User::find_by_screenName_and_password($noExistUserScreenName, $noExistUserPass);
         $this->assertEquals(!empty($expect), false);
     }
 

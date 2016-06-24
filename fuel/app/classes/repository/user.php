@@ -8,7 +8,7 @@ class User
         return Model_User::forge();
     }
 
-    static public function user_find_by_screenName_and_password($screenName,$pass)
+    static public function find_by_screenName_and_password($screenName,$pass)
     {
         return  Model_User::find('first', array(
             'where' => array(
