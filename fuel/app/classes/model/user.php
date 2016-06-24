@@ -7,6 +7,7 @@ class model_user extends \Orm\Model
     'screen_name' => array(
       'validation' => array(
         'required',
+        'uniqueness',
       ),
     ),
     'name' => array(

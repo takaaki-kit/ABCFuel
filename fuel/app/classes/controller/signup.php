@@ -11,11 +11,6 @@ class controller_signup extends Controller
     {
         $postParams = $this->get_post_params();
         $view = Repository_View::create_signup_view_with_user_params($postParams);
-        if (Repository_Modeluser::is_existed_screenname($postParams->screen_name)) {
-            $view = Repository_View::set_new_param($view, 'error', 'そのscreen_nameはすでに使用されています');
-
-            return $view;
-        }
         try {
             Repository_Modeluser::save($postParams);
         } catch (\Orm\ValidationFailed $e) {
