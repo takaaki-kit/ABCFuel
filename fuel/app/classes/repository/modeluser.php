@@ -1,14 +1,14 @@
 <?php
 
 
-class Repository_Modeluser
+class repository_modeluser
 {
-    static public function create_user_object()
+    public static function create_user_object()
     {
         return Model_User::forge();
     }
 
-    static public function user_find_by_screenName_and_password($screenName,$pass)
+    public static function user_find_by_screenName_and_password($screenName, $pass)
     {
         return  Model_User::find('first', array(
             'where' => array(
@@ -18,23 +18,8 @@ class Repository_Modeluser
         ));
     }
 
-    static public function save($user)
+    public static function save($user)
     {
         return $user->save();
-    }
-
-    static public function is_existed_screenname($check)
-    {
-        $result = Model_User::find('all', array(
-      'where' => array(
-        array('screen_name', $check),
-      ),
-    ));
-
-        if (empty($result)) {
-            return false;
-        } else {
-            return true;
-        }
     }
 }

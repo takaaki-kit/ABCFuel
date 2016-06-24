@@ -15,17 +15,6 @@ class Repository_ModeluserTest extends PHPUnit_Extensions_Database_TestCase
     {
         return $this->createFlatXmlDataset(APPPATH.'tests/db/defaultUserDataset.xml');
     }
-    public function test入力されたscreennameが存在しないならfalseが帰ってくる()
-    {
-        $noExistScreenName = 'ahoboke';
-        $this->assertEquals(false, (new Repository_Modeluser())->is_existed_screenname($noExistScreenName));
-    }
-
-    public function test入力されたscreennameが存在するならtrueが帰ってくる()
-    {
-        $existScreenName = 'user1';
-        $this->assertEquals(true, (new Repository_Modeluser())->is_existed_screenname($existScreenName));
-    }
 
     public function test入力されたscreen_nameとpasswordが一致していたらそのユーザオブジェクトを返す()
     {
