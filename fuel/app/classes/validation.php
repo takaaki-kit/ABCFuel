@@ -15,7 +15,7 @@ class validation extends Fuel\Core\Validation
         $result = DB::select(DB::expr('COUNT(*) AS count'))
             ->from($table)->where($field, $value)->execute();
 
-        if ($result->current()['count']) {
+        if ($result->current()['count'] > 0) {
             return false;
         } else {
             return true;
