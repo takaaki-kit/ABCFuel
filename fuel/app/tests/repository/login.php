@@ -22,4 +22,13 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
         $expect = $user->can_login();
         $this->assertTrue(!empty($expect));
     }
+
+    public function testscreeen_nameとpasswordが一致するユーザが存在しない時、ログイン不可としてそのユーザの空のオブジェクトを返す()
+    {
+        $no_exist_screen_name = 'dummy';
+        $no_exist_password = 'dummy';
+        $user = new Login($no_exist_screen_name,$no_exist_password);
+        $expect = $user->can_login();
+        $this->assertTrue(empty($expect));
+    }
 }
