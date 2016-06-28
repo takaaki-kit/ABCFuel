@@ -2,6 +2,7 @@
 
 class Signup
 {
+    private $id;
     public function __construct($screen_name,$name,$password)
     {
         $this->screen_name = $screen_name;
@@ -20,11 +21,12 @@ class Signup
         } catch (\Orm\validationFailed $e) {
             return false;
         }
+        $this->id = $user->id;
         return true;
     }
 
     public function get_id()
     {
-        return 3;
+        return $this->id;
     }
 }
