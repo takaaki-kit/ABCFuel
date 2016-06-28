@@ -16,7 +16,9 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
 
     public function testscreeen_nameとpasswordが一致するユーザが存在する時、ログイン可能としてそのユーザのオブジェクトを返す()
     {
-        $user = new Login($screen_name,$password);
+        $exist_screen_name = 'user1';
+        $exist_password = 'aho';
+        $user = new Login($exist_screen_name,$exist_password);
         $expect = $user->can_login();
         $this->assertTrue(!empty($expect));
     }
