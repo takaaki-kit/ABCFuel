@@ -6,7 +6,7 @@ require COREPATH.'bootstrap.php';
     'Validation' => APPPATH.'classes/validation.php',
     'User' => APPPATH.'classes/repository/user.php',
     'Message' => APPPATH.'classes/repository/message.php',
-    'Controller_Base' => APPPATH.'classes/base.php',
+    'Controller_Base' => APPPATH.'classes/controller/base.php',
 ));
 
 // Register the autoloader
