@@ -22,4 +22,9 @@ class Signup
         }
         return true;
     }
+
+    public function get_id()
+    {
+        return 3;
+    }
 }

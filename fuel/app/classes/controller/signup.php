@@ -9,11 +9,12 @@ class controller_signup extends Controller
 
     public function post_index()
     {
-        $postParams = $this->get_post_params();
-        $view = View::forge('signup', ['user' => $postParams]);
+        $user = new Signup(Input::param('screen_name'),Input::param('name'),Input::param('password'));
+        #$postParams = $this->get_post_params();
         try {
-            User::save($postParams);
+            $user->save();
         } catch (\Orm\ValidationFailed $e) {
+            $view = View::forge('signup', ['user' => $postParams]);
             $view->set_safe('error',$e->get_fieldset()->validation()->error());
 
             return $view;

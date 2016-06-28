@@ -28,4 +28,12 @@ class SignupTest extends PHPUnit_Extensions_Database_TestCase
         $expect = $signup_user->save();
         $this->assertFalse($expect);
     }
+
+    public function test登録したユーザのIDを返す()
+    {
+        $signup_user = new Signup('aho','boke','kasu');
+        $signup_user->save();
+        $expect = $signup_user->get_id();
+        $this->assertEquals($expect,3);
+    }
 }
