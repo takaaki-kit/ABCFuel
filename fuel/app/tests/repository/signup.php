@@ -14,10 +14,18 @@ class SignupTest extends PHPUnit_Extensions_Database_TestCase
         return $this->createFlatXmlDataset(APPPATH.'tests/db/defaultUserDataset.xml');
     }
 
-    public function testユーザを登録できる()
+    public function testユーザを登録できるときtrueが帰ってくる()
     {
         $signup_user = new Signup('test_screen_name','test_name','test_password');
         $expect = $signup_user->save();
         $this->assertTrue($expect);
+    }
+
+    public function testユーザを登録できなかったらfalseが帰ってくる()
+    {
+        $invalid_param = '';
+        $signup_user = new Signup($invalid_param,$invalid_param,$invalid_param);
+        $expect = $signup_user->save();
+        $this->assertFalse($expect);
     }
 }
