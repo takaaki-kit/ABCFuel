@@ -4,12 +4,13 @@ class controller_signup extends Controller
 {
     public function get_index()
     {
-        return View::forge('signup', ['user' => User::create_user_object()]);
+        $user = $this->get_signup_instance();
+        return View::forge('signup', ['user' => $user->get_user_model()]);
     }
 
     public function post_index()
     {
-        $user = new Signup(Input::param('screen_name'),Input::param('name'),Input::param('password'));
+        $user = $this->get_signup_instance();
         try {
             $user->save();
         } catch (Orm\ValidationFailed $e) {
@@ -20,5 +21,10 @@ class controller_signup extends Controller
         }
         Session::set('id', $user->get_id());
         Response::redirect('/timeline');
+    }
+
+    private function get_signup_instance()
+    {
+        return new Signup(Input::param('screen_name'),Input::param('name'),Input::param('password'));
     }
 }
