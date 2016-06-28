@@ -3,6 +3,9 @@
 
 class User
 {
+    protected screen_name;
+
+    public function save()
     static public function create_user_object()
     {
         return Model_User::forge();
