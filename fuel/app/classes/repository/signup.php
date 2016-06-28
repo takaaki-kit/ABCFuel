@@ -16,11 +16,7 @@ class Signup
         $user->screen_name = $this->screen_name;
         $user->name = $this->name;
         $user->password = $this->password;
-        try {
-            $user->save();
-        } catch (\Orm\validationFailed $e) {
-            return false;
-        }
+        $user->save();
         $this->id = $user->id;
         return true;
     }
@@ -28,5 +24,14 @@ class Signup
     public function get_id()
     {
         return $this->id;
+    }
+
+    public function get_user_model()
+    {
+        $user = Model_User::forge();
+        $user->screen_name = $this->screen_name;
+        $user->name = $this->name;
+        $user->password = $this->password;
+        return $user;
     }
 }

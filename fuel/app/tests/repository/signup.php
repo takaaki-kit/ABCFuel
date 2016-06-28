@@ -21,12 +21,16 @@ class SignupTest extends PHPUnit_Extensions_Database_TestCase
         $this->assertTrue($expect);
     }
 
-    public function testユーザを登録できなかったらfalseが帰ってくる()
+    public function testユーザを登録できなかったら例外が帰ってくる()
     {
         $invalid_param = '';
         $signup_user = new Signup($invalid_param,$invalid_param,$invalid_param);
-        $expect = $signup_user->save();
-        $this->assertFalse($expect);
+        try {
+            $signup_user->save();
+            $this->fail();
+        } catch (Exception $e){
+            $this->assertEquals(get_class($e),'Orm\ValidationFailed');
+        }
     }
 
     public function test登録したユーザのIDを返す()
