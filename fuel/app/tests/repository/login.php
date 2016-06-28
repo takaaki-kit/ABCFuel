@@ -41,4 +41,15 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
         $expect = $user->get_id();
         $this->assertEquals($expect,1);
     }
+
+    public function testログインできなかったscreen_nameをpasswordをもつユーザモデルのオブジェクトをかえす()
+    {
+        $no_exist_screen_name = 'dummy_screen_name';
+        $no_exist_password = 'dummy_password';
+        $user = new Login($no_exist_screen_name,$no_exist_password);
+        $user->can_login();
+        $expect = $user->get_user_model();
+        $this->assertEquals($expect->screen_name,'dummy_screen_name');
+        $this->assertEquals($expect->password,'dummy_password');
+    }
 }

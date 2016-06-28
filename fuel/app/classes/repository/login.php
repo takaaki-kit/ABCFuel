@@ -32,4 +32,12 @@ class Login
         return $this->id;
     }
 
+    public function get_user_model()
+    {
+        $user = Model_User::forge();
+        $user->screen_name = $this->screen_name;
+        $user->password = $this->password;
+        return $user;
+    }
+
 }
