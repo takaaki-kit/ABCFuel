@@ -1,6 +1,6 @@
 <?php
 
-class LoginTest extends PHPUnit_Extensions_Database_TestCase
+class LoginUserUserTest extends PHPUnit_Extensions_Database_TestCase
 {
     public function getConnection()
     {
@@ -18,7 +18,7 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
     {
         $exist_screen_name = 'user1';
         $exist_password = 'aho';
-        $user = new Login($exist_screen_name,$exist_password);
+        $user = new LoginUser($exist_screen_name,$exist_password);
         $expect = $user->can_login();
         $this->assertTrue($expect);
     }
@@ -27,7 +27,7 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
     {
         $no_exist_screen_name = 'dummy';
         $no_exist_password = 'dummy';
-        $user = new Login($no_exist_screen_name,$no_exist_password);
+        $user = new LoginUser($no_exist_screen_name,$no_exist_password);
         $expect = $user->can_login();
         $this->assertFalse($expect);
     }
@@ -36,7 +36,7 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
     {
         $exist_screen_name = 'user1';
         $exist_password = 'aho';
-        $user = new Login($exist_screen_name,$exist_password);
+        $user = new LoginUser($exist_screen_name,$exist_password);
         $user->can_login();
         $expect = $user->get_id();
         $this->assertEquals($expect,1);
@@ -46,7 +46,7 @@ class LoginTest extends PHPUnit_Extensions_Database_TestCase
     {
         $no_exist_screen_name = 'dummy_screen_name';
         $no_exist_password = 'dummy_password';
-        $user = new Login($no_exist_screen_name,$no_exist_password);
+        $user = new LoginUser($no_exist_screen_name,$no_exist_password);
         $user->can_login();
         $expect = $user->get_user_model();
         $this->assertEquals($expect->screen_name,'dummy_screen_name');

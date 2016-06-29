@@ -5,8 +5,8 @@ require COREPATH.'bootstrap.php';
 \Autoloader::add_classes(array(
     'Validation' => APPPATH.'classes/validation.php',
     'User' => APPPATH.'classes/repository/user.php',
-    'Login' => APPPATH.'classes/repository/login.php',
-    'Signup' => APPPATH.'classes/repository/signup.php',
+    'LoginUser' => APPPATH.'classes/repository/login.php',
+    'SignupUser' => APPPATH.'classes/repository/signup.php',
     'Message' => APPPATH.'classes/repository/message.php',
     'Controller_Base' => APPPATH.'classes/controller/base.php',
 ));

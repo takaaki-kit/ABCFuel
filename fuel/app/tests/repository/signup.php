@@ -1,6 +1,6 @@
 <?php
 
-class SignupTest extends PHPUnit_Extensions_Database_TestCase
+class SignupUserUserTest extends PHPUnit_Extensions_Database_TestCase
 {
     public function getConnection()
     {
@@ -16,7 +16,7 @@ class SignupTest extends PHPUnit_Extensions_Database_TestCase
 
     public function testユーザを登録できるときtrueが帰ってくる()
     {
-        $signup_user = new Signup('test_screen_name','test_name','test_password');
+        $signup_user = new SignupUser('test_screen_name','test_name','test_password');
         $expect = $signup_user->save();
         $this->assertTrue($expect);
     }
@@ -24,7 +24,7 @@ class SignupTest extends PHPUnit_Extensions_Database_TestCase
     public function testユーザを登録できなかったら例外が帰ってくる()
     {
         $invalid_param = '';
-        $signup_user = new Signup($invalid_param,$invalid_param,$invalid_param);
+        $signup_user = new SignupUser($invalid_param,$invalid_param,$invalid_param);
         try {
             $signup_user->save();
             $this->fail();
@@ -35,7 +35,7 @@ class SignupTest extends PHPUnit_Extensions_Database_TestCase
 
     public function test登録したユーザのIDを返す()
     {
-        $signup_user = new Signup('aho','boke','kasu');
+        $signup_user = new SignupUser('aho','boke','kasu');
         $signup_user->save();
         $expect = $signup_user->get_id();
         $this->assertEquals($expect,4);

@@ -1,6 +1,6 @@
 <?php
 
-class Signup
+class SignupUser
 {
     private $id;
 
