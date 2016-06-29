@@ -48,7 +48,7 @@ class LoginUserUserTest extends PHPUnit_Extensions_Database_TestCase
         $no_exist_password = 'dummy_password';
         $user = new LoginUser($no_exist_screen_name,$no_exist_password);
         $user->can_login();
-        $expect = $user->get_user_model();
+        $expect = $user->get_params();
         $this->assertEquals($expect->screen_name,'dummy_screen_name');
         $this->assertEquals($expect->password,'dummy_password');
     }

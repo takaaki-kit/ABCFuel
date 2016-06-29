@@ -1,6 +1,6 @@
 <?php
 
-class SignupUserUserTest extends PHPUnit_Extensions_Database_TestCase
+class SignupUserTest extends PHPUnit_Extensions_Database_TestCase
 {
     public function getConnection()
     {

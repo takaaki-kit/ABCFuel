@@ -27,7 +27,7 @@ class LoginUser
         return $this->id;
     }
 
-    public function get_user_model()
+    public function get_params()
     {
         $user = Model_User::forge();
         $user->screen_name = $this->screen_name;
