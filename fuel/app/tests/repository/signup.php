@@ -40,4 +40,13 @@ class SignupUserTest extends PHPUnit_Extensions_Database_TestCase
         $expect = $signup_user->get_id();
         $this->assertEquals($expect,4);
     }
+
+    public function testゲッターでsignupuserのパラメータを取得できる()
+    {
+        $user = new SignupUser('dummy_sn','dummy_name','dummy_pass');
+        $expect = $user->get_params();
+        $this->assertEquals($expect->screen_name,'dummy_sn');
+        $this->assertEquals($expect->name,'dummy_name');
+        $this->assertEquals($expect->password,'dummy_pass');
+    }
 }

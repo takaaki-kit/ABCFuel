@@ -25,7 +25,7 @@ class SignupUser
         return $this->id;
     }
 
-    public function get_user_model()
+    public function get_params()
     {
         $user = Model_User::forge();
         $this->set_params($user);

@@ -2,29 +2,26 @@
 
 class controller_signup extends Controller
 {
+    private $user;
+
     public function get_index()
     {
-        $user = $this->get_signup_user_instance();
-        return View::forge('signup', ['user' => $user->get_user_model()]);
+        $this->user = new SignupUser('','','');
+        return View::forge('signup', ['user' => $this->user->get_params()]);
     }
 
     public function post_index()
     {
-        $user = $this->get_signup_user_instance();
+        $this->user = new SignupUser(Input::param('screen_name'),Input::param('name'),Input::param('password'));
         try {
-            $user->save();
+            $this->user->save();
         } catch (Orm\ValidationFailed $e) {
-            $view = View::forge('signup', ['user' => $user->get_user_model()]);
+            $view = View::forge('signup', ['user' => $this->user->get_params()]);
             $view->set_safe('error',$e->get_fieldset()->validation()->error());
 
             return $view;
         }
-        Session::set('id', $user->get_id());
+        Session::set('id', $this->user->get_id());
         Response::redirect('/timeline');
-    }
-
-    private function get_signup_user_instance()
-    {
-        return new SignupUser(Input::param('screen_name'),Input::param('name'),Input::param('password'));
     }
 }
