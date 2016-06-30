@@ -17,7 +17,8 @@
         "monolog/monolog": "1.18.*",
         "phpseclib/phpseclib": "2.0.0",
         "michelf/php-markdown": "1.4.0",
-        "phpunit/phpunit": "3.7.*"
+        "phpunit/phpunit": "3.7.*",
+        "phpunit/dbunit": ">=1.2"
     },
     "require-dev": {
         "fuel/docs": "1.8.*"

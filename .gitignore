@@ -36,3 +36,4 @@ desktop.ini
 /nginx/logs/*.log
 /fuel/app/config/crypt.php
 dump.rdb
+tags

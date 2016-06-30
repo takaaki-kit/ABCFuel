@@ -1,3 +1,4 @@
+
 <?php
 
 class model_message extends \Orm\Model

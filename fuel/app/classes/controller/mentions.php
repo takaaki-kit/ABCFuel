@@ -1,31 +1,14 @@
-
 <?php
 
-class Controller_mentions extends Controller
+class Controller_Mentions extends Controller_Base
 {
-    private $user;
-
-    public function before()
-    {
-        $this->user = Model_User::find(Session::get('id'));
-        if (!$this->user) {
-            Response::redirect('/signup');
-        }
-    }
-
     public function get_index()
     {
-        $messages = Model_Message::find('all', array(
-            'where' => array(
-                array('mention', Session::get('id')),
-            ),
-        ));
+        $messages = Message::find_by_mention_desc_by_createdAt(Session::get('id'));
 
         return View::forge('timeline', array(
-            'aaa'      => Session::get('id'),
             'messages' => $messages,
-            'user'   => $this->user,
-            'type' => 'mentions',
+            'user'     => $this->current_user(),
         ));
     }
 }

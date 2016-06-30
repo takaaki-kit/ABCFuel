@@ -7,6 +7,7 @@ class model_user extends \Orm\Model
     'screen_name' => array(
       'validation' => array(
         'required',
+        'uniqueness',
       ),
     ),
     'name' => array(
@@ -41,18 +42,4 @@ class model_user extends \Orm\Model
 
     protected static $_table_name = 'users';
 
-    static public function isNotYetExistedScreenName($check)
-    {
-        $result = self::find('all', array(
-      'where' => array(
-        array('screen_name', $check),
-      ),
-    ));
-
-        if (empty($result)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

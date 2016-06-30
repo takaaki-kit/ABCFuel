@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<dataset>
+    <users id="1" screen_name="user1" name="1_aho" password="aho" image="1image" text="user1_profile" created_at="1466083000" />
+    <users id="2" screen_name="user2" name="2_boke" password="boke" image="2image" text="user2_profile" created_at="1466083050" />
+    <users id="3" screen_name="user3" name="3_kasu" password="kasu" image="3image" text="user3_profile" created_at="1466084000" />
+</dataset>
+
+

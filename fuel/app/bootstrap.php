@@ -3,8 +3,12 @@
 require COREPATH.'bootstrap.php';
 
 \Autoloader::add_classes(array(
-	// Add classes you want to override here
-	// Example: 'View' => APPPATH.'classes/view.php',
+    'Validation' => APPPATH.'classes/validation.php',
+    'User' => APPPATH.'classes/repository/user.php',
+    'Login' => APPPATH.'classes/repository/login.php',
+    'Signup' => APPPATH.'classes/repository/signup.php',
+    'Message' => APPPATH.'classes/repository/message.php',
+    'Controller_Base' => APPPATH.'classes/controller/base.php',
 ));
 
 // Register the autoloader

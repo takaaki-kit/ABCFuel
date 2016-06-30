@@ -1,12 +1,10 @@
-<?php echo Asset::css("timeline.css"); ?>
+<?php echo Asset::css('timeline.css'); ?>
 
 <!doctype html>
 <html lang="ja">
   <head>
   </head>
-  <body>
-  <p><?php echo $aaa; ?></p>
-  <p><?php echo $type; ?></p>
+    <body>
     <div class="all-item">
       <div class="header">
         <div class="home">
@@ -66,8 +64,7 @@
 
       <div class="timeline">
 
-<?php foreach($messages as $m)
-{
+<?php foreach ($messages as $m) {
 ?>
         <div class="content" id="post_id_<?php echo $m->id ?>">
           <div class="image">
@@ -99,7 +96,8 @@
             </div>
           </div>
         </div>
-<?php } ?>
+<?php 
+} ?>
       </div>
     </div>
 

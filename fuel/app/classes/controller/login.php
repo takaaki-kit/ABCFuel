@@ -4,28 +4,25 @@ class controller_login extends Controller
 {
     public function get_index()
     {
-        return View::forge('login',['user' => Model_User::forge()]);
+        $user = $this->get_login_instance();
+        return View::forge('login',['postParams' => $user->get_user_model()]);
     }
+
     public function post_index()
     {
-
-        $model = Model_User::forge();
-        $model->screen_name = Input::param('screen_name');
-        $model->password = Input::param('password');
-        $user = Model_User::find('first', array(
-            'where' => array(
-                array('screen_name', $model->screen_name),
-                array('password', $model->password),
-            ),
-        ));
-        $view = View::forge('login', ['user' => $model]);
-        if (empty($user)) {
-            $error = 'invalid input';
-            $view->set('error', $error);
+        $user = $this->get_login_instance();
+        if ($user->can_login() === false) {
+            $view = View::forge('login', ['postParams' => $user->get_user_model()]);
+            $view->set_safe('error', 'IDかパスワードが違います');
 
             return $view;
         }
-        Session::set('id', $user->id);
+        Session::set('id', $user->get_id());
         Response::redirect('/timeline');
+    }
+
+    private function get_login_instance()
+    {
+        return new Login(Input::param('screen_name'),Input::param('password'));
     }
 }
