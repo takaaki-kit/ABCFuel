@@ -6,7 +6,7 @@ class controller_login extends Controller
     {
         $auth = new Auth();
 
-        return View::forge('login', ['postParams' => $user->get_params()]);
+        return View::forge('login', ['postParams' => $auth->get_params()]);
     }
 
     public function post_index()

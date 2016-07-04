@@ -2,37 +2,33 @@
 
 class auth
 {
-    private $id;
-
     public function __construct($screen_name = '', $password = '')
     {
-        $this->screen_name = $screen_name;
-        $this->password = $password;
+        $this->user = Model_User::forge();
+        $this->user->screen_name = $screen_name;
+        $this->user->password = $password;
     }
 
     public function enable()
     {
-        $result = User::find_by_screenName_and_password($this->screen_name, $this->password);
+        $result = User::find_by_screenName_and_password($this->user->screen_name, $this->user->password);
 
         if ($result === null) {
             return false;
         }
-        $this->id = $result->id;
+
+        $this->user = $result;
 
         return true;
     }
 
     public function id()
     {
-        return $this->id;
+        return $this->user->id;
     }
 
     public function get_params()
     {
-        $user = Model_User::forge();
-        $user->screen_name = $this->screen_name;
-        $user->password = $this->password;
-
-        return $user;
+        return $this->user;
     }
 }
