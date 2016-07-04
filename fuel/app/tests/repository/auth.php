@@ -19,7 +19,7 @@ class AuthTest extends PHPUnit_Extensions_Database_TestCase
         $exist_screen_name = 'user1';
         $exist_password = 'aho';
         $user = new Auth($exist_screen_name,$exist_password);
-        $expect = $user->can_login();
+        $expect = $user->enable();
         $this->assertTrue($expect);
     }
 
@@ -28,7 +28,7 @@ class AuthTest extends PHPUnit_Extensions_Database_TestCase
         $no_exist_screen_name = 'dummy';
         $no_exist_password = 'dummy';
         $user = new Auth($no_exist_screen_name,$no_exist_password);
-        $expect = $user->can_login();
+        $expect = $user->enable();
         $this->assertFalse($expect);
     }
 
@@ -37,7 +37,7 @@ class AuthTest extends PHPUnit_Extensions_Database_TestCase
         $exist_screen_name = 'user1';
         $exist_password = 'aho';
         $user = new Auth($exist_screen_name,$exist_password);
-        $user->can_login();
+        $user->enable();
         $expect = $user->id();
         $this->assertEquals($expect,1);
     }
@@ -47,7 +47,7 @@ class AuthTest extends PHPUnit_Extensions_Database_TestCase
         $no_exist_screen_name = 'dummy_screen_name';
         $no_exist_password = 'dummy_password';
         $user = new Auth($no_exist_screen_name,$no_exist_password);
-        $user->can_login();
+        $user->enable();
         $expect = $user->get_params();
         $this->assertEquals($expect->screen_name,'dummy_screen_name');
         $this->assertEquals($expect->password,'dummy_password');

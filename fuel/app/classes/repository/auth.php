@@ -10,7 +10,7 @@ class Auth
         $this->password = $password;
     }
 
-    public function can_login()
+    public function enable()
     {
         $result = User::find_by_screenName_and_password($this->screen_name,$this->password);
 
