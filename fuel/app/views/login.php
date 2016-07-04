@@ -12,11 +12,11 @@
     <?php endif ?>
     <div class="screen_name">
       <p>ログインID</p>
-      <input type="text" name="screen_name" value="<?php echo $postParams->screen_name ?>" placeholder="screen_name">
+      <input type="text" name="screen_name" value="<?php echo $post_params->screen_name ?>" placeholder="screen_name">
     </div>
     <div class="password">
       <p>パスワード</p>
-      <input type="password" name="password" value="<?php echo $postParams->name ?>" placeholder="password">
+      <input type="password" name="password" value="<?php echo $post_params->name ?>" placeholder="password">
     </div>
 
     <div class="submit">
