@@ -2,42 +2,29 @@
 
 class SignupUser
 {
-    private $id;
-
     public function __construct($screen_name = '', $name = '', $password = '')
     {
-        $this->screen_name = $screen_name;
-        $this->name = $name;
-        $this->password = $password;
+        $this->user = Model_User::forge();
+        $this->user->screen_name = $screen_name;
+        $this->user->name = $name;
+        $this->user->password = $password;
     }
 
     public function save()
     {
-        $user = Model_User::forge();
-        $this->set_params($user);
-        $user->save();
-        $this->id = $user->id;
+        $this->user->save();
 
         return true;
     }
 
     public function id()
     {
-        return $this->id;
+        return $this->user->id;
     }
 
     public function get_params()
     {
-        $user = Model_User::forge();
-        $this->set_params($user);
-
-        return $user;
+        return $this->user;
     }
 
-    private function set_params($user)
-    {
-        $user->screen_name = $this->screen_name;
-        $user->name = $this->name;
-        $user->password = $this->password;
-    }
 }
