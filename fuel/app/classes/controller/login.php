@@ -4,7 +4,7 @@ class controller_login extends Controller
 {
     public function get_index()
     {
-        $user = new Auth('','');
+        $user = new Auth();
         return View::forge('login',['postParams' => $user->get_params()]);
     }
 

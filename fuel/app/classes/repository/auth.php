@@ -1,10 +1,10 @@
 <?php
 
-class Auth
+class auth
 {
     private $id;
 
-    public function __construct($screen_name, $password)
+    public function __construct($screen_name = '', $password = '')
     {
         $this->screen_name = $screen_name;
         $this->password = $password;
@@ -12,9 +12,9 @@ class Auth
 
     public function enable()
     {
-        $result = User::find_by_screenName_and_password($this->screen_name,$this->password);
+        $result = User::find_by_screenName_and_password($this->screen_name, $this->password);
 
-        if ($result === NULL) {
+        if ($result === null) {
             return false;
         }
         $this->id = $result->id;
