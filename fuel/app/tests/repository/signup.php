@@ -37,7 +37,7 @@ class SignupUserTest extends PHPUnit_Extensions_Database_TestCase
     {
         $signup_user = new SignupUser('aho','boke','kasu');
         $signup_user->save();
-        $expect = $signup_user->get_id();
+        $expect = $signup_user->id();
         $this->assertEquals($expect,4);
     }
 

@@ -22,7 +22,7 @@ class LoginUser
         return true;
     }
 
-    public function get_id()
+    public function id()
     {
         return $this->id;
     }

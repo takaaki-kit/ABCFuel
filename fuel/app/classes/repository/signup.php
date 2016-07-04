@@ -20,7 +20,7 @@ class SignupUser
         return true;
     }
 
-    public function get_id()
+    public function id()
     {
         return $this->id;
     }
