@@ -19,7 +19,7 @@ class controller_signup extends Controller
 
             return $view;
         }
-        Session::set('id', $user->id());
+        Session::set('id', $user->attribute()->id);
         Response::redirect('/timeline');
     }
 }

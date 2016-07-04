@@ -22,11 +22,6 @@ class auth
         return true;
     }
 
-    public function id()
-    {
-        return $this->user->id;
-    }
-
     public function attribute()
     {
         return $this->user;

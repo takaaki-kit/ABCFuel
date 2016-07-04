@@ -18,7 +18,7 @@ class controller_login extends Controller
 
             return $view;
         }
-        Session::set('id', $auth->id());
+        Session::set('id', $auth->attribute()->id);
         Response::redirect('/timeline');
     }
 }

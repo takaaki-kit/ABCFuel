@@ -33,14 +33,6 @@ class SignupUserTest extends PHPUnit_Extensions_Database_TestCase
         }
     }
 
-    public function test登録したユーザのIDを返す()
-    {
-        $signup_user = new SignupUser('aho','boke','kasu');
-        $signup_user->save();
-        $expect = $signup_user->id();
-        $this->assertEquals($expect,4);
-    }
-
     public function testゲッターでsignupuserのパラメータを取得できる()
     {
         $user = new SignupUser('dummy_sn','dummy_name','dummy_pass');

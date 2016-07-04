@@ -32,16 +32,6 @@ class AuthTest extends PHPUnit_Extensions_Database_TestCase
         $this->assertFalse($expect);
     }
 
-    public function testログインできたユーザのIDを返す()
-    {
-        $exist_screen_name = 'user1';
-        $exist_password = 'aho';
-        $user = new Auth($exist_screen_name,$exist_password);
-        $user->enable();
-        $expect = $user->id();
-        $this->assertEquals($expect,1);
-    }
-
     public function testゲッターでログインできなかったscreen_nameをpasswordをもつユーザモデルのオブジェクトをかえす()
     {
         $no_exist_screen_name = 'dummy_screen_name';
