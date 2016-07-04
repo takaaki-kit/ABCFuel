@@ -22,7 +22,7 @@ class SignupUser
         return $this->user->id;
     }
 
-    public function get_params()
+    public function attribute()
     {
         return $this->user;
     }

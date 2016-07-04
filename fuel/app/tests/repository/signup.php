@@ -44,7 +44,7 @@ class SignupUserTest extends PHPUnit_Extensions_Database_TestCase
     public function testゲッターでsignupuserのパラメータを取得できる()
     {
         $user = new SignupUser('dummy_sn','dummy_name','dummy_pass');
-        $expect = $user->get_params();
+        $expect = $user->attribute();
         $this->assertEquals($expect->screen_name,'dummy_sn');
         $this->assertEquals($expect->name,'dummy_name');
         $this->assertEquals($expect->password,'dummy_pass');

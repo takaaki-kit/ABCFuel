@@ -5,7 +5,7 @@ class controller_signup extends Controller
     public function get_index()
     {
         $user = new SignupUser();
-        return View::forge('signup', ['user' => $user->get_params()]);
+        return View::forge('signup', ['user' => $user->attribute()]);
     }
 
     public function post_index()
@@ -14,7 +14,7 @@ class controller_signup extends Controller
         try {
             $user->save();
         } catch (Orm\ValidationFailed $e) {
-            $view = View::forge('signup', ['user' => $user->get_params()]);
+            $view = View::forge('signup', ['user' => $user->attribute()]);
             $view->set_safe('error',$e->get_fieldset()->validation()->error());
 
             return $view;
