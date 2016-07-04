@@ -4,7 +4,7 @@ class controller_signup extends Controller
 {
     public function get_index()
     {
-        $user = new SignupUser('','','');
+        $user = new SignupUser();
         return View::forge('signup', ['user' => $user->get_params()]);
     }
 

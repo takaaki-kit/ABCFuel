@@ -4,7 +4,7 @@ class SignupUser
 {
     private $id;
 
-    public function __construct($screen_name,$name,$password)
+    public function __construct($screen_name = '', $name = '', $password = '')
     {
         $this->screen_name = $screen_name;
         $this->name = $name;
@@ -17,6 +17,7 @@ class SignupUser
         $this->set_params($user);
         $user->save();
         $this->id = $user->id;
+
         return true;
     }
 
@@ -29,6 +30,7 @@ class SignupUser
     {
         $user = Model_User::forge();
         $this->set_params($user);
+
         return $user;
     }
 
