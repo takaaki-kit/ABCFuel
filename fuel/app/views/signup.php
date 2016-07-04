@@ -12,21 +12,21 @@
           <p><?php echo $error['screen_name'] ?></p>
           <?php endif ?>
         <div class="screen_name">
-          <input type="text" name="screen_name" value="<?php echo $user->screen_name ?>" placeholder="screen_name">
+          <input type="text" name="screen_name" value="<?php echo $post_params->screen_name ?>" placeholder="screen_name">
         </div>
           <?php if (isset($error['name'])): ?>
           <p><?php echo $error['name'] ?></p>
           <?php endif ?>
 
         <div class="name">
-          <input type="text" name="name" value="<?php echo $user->name ?>" placeholder="name">
+          <input type="text" name="name" value="<?php echo $post_params->name ?>" placeholder="name">
         </div>
 
           <?php if (isset($error['password'])): ?>
           <p><?php echo $error['password'] ?></p>
           <?php endif ?>
         <div class="password">
-          <input type="password" name="password" value="<?php echo $user->password ?>" placeholder="password">
+          <input type="password" name="password" value="<?php echo $post_params->password ?>" placeholder="password">
         </div>
 
         <div class="submit">
