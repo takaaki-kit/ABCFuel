@@ -48,7 +48,7 @@ class AuthTest extends PHPUnit_Extensions_Database_TestCase
         $no_exist_password = 'dummy_password';
         $user = new Auth($no_exist_screen_name,$no_exist_password);
         $user->enable();
-        $expect = $user->get_params();
+        $expect = $user->attribute();
         $this->assertEquals($expect->screen_name,'dummy_screen_name');
         $this->assertEquals($expect->password,'dummy_password');
     }
