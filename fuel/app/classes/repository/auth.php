@@ -1,6 +1,6 @@
 <?php
 
-class LoginUser
+class Auth
 {
     private $id;
 
