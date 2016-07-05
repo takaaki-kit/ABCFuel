@@ -6,7 +6,9 @@ class SignupUser
     {
         $this->user = Model_User::forge();
         $this->user->screen_name = $screen_name;
+
         $this->user->name = $name;
+
         $this->user->password = $password;
     }
 
@@ -21,5 +23,4 @@ class SignupUser
     {
         return $this->user;
     }
-
 }
